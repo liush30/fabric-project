@@ -1,0 +1,2 @@
+./network.sh deployCC -ccn pile -ccp /root/project/ev_charging_system/chaincode/pile -ccl go
+./network.sh deployCC -ccn repair -ccp /root/project/ev_charging_system/chaincode/repair_process -ccl go

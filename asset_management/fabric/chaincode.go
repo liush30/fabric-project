@@ -65,7 +65,36 @@ func InitAsset(assetId, assetHash, owner, notes string) error {
 	}
 	return nil
 }
+func UpdateAsset(assetId, assetHash, owner, notes string) error {
+	clientConnection := newGrpcConnection()
+	defer clientConnection.Close()
 
+	identity := newIdentity()
+	sign := newSign()
+
+	gw, err := client.Connect(
+		identity,
+		client.WithSign(sign),
+		client.WithHash(hash.SHA256),
+		client.WithClientConnection(clientConnection),
+		client.WithEvaluateTimeout(5*time.Second),
+		client.WithEndorseTimeout(15*time.Second),
+		client.WithSubmitTimeout(5*time.Second),
+		client.WithCommitStatusTimeout(1*time.Minute),
+	)
+	if err != nil {
+		return fmt.Errorf("failed to connect:%s", err.Error())
+	}
+	defer gw.Close()
+
+	network := gw.GetNetwork(channel)
+	contract := network.GetContract(pileChaincode)
+	_, err = contract.SubmitTransaction("UpdateAsset", assetId, assetHash, owner, notes)
+	if err != nil {
+		return fmt.Errorf("failed to submit transaction:%s", err.Error())
+	}
+	return nil
+}
 func UploadAssessmentResult(assetId, assessor, result, note string) error {
 	clientConnection := newGrpcConnection()
 	defer clientConnection.Close()
@@ -281,4 +310,44 @@ func QueryAsset(assetId string) (Asset, error) {
 		return Asset{}, fmt.Errorf("failed to submit transaction:%s", err.Error())
 	}
 	return asset, nil
+}
+
+func QueryAssessmentHistory(assetId string) ([]AssessmentResult, error) {
+	clientConnection := newGrpcConnection()
+	defer clientConnection.Close()
+
+	identity := newIdentity()
+	sign := newSign()
+
+	gw, err := client.Connect(
+		identity,
+		client.WithSign(sign),
+		client.WithHash(hash.SHA256),
+		client.WithClientConnection(clientConnection),
+		client.WithEvaluateTimeout(5*time.Second),
+		client.WithEndorseTimeout(15*time.Second),
+		client.WithSubmitTimeout(5*time.Second),
+		client.WithCommitStatusTimeout(1*time.Minute),
+	)
+	if err != nil {
+		return nil, fmt.Errorf("failed to connect:%s", err.Error())
+	}
+	defer gw.Close()
+
+	network := gw.GetNetwork(channel)
+	contract := network.GetContract(pileChaincode)
+
+	transaction, err := contract.EvaluateTransaction("QueryAssessmentHistory", assetId)
+	if err != nil {
+		return nil, err
+	}
+	if transaction == nil {
+		return nil, nil
+	}
+	var assessmentResults []AssessmentResult
+	err = json.Unmarshal(transaction, &assessmentResults)
+	if err != nil {
+		return nil, err
+	}
+	return assessmentResults, nil
 }

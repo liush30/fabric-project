@@ -66,3 +66,10 @@ func GetAllUserInfoWithConditions(conditions map[string]interface{}, page, pageS
 	err := DB.Model(&asset).Where(conditions).Limit(pageSize).Offset(offset).Find(&asset).Error
 	return asset, err
 }
+
+// GetUserInfoByUserName 通过username查询用户信息
+func GetUserInfoByUserName(username string) (*UserInfo, error) {
+	var UserInfo UserInfo
+	err := DB.Model(&UserInfo).First(&UserInfo, "user_name = ?", username).Error
+	return &UserInfo, err
+}

@@ -1,6 +1,8 @@
 package db
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type AuctionRuleType struct {
 	TypeID      string `gorm:"primaryKey;column:type_id"` // 类型ID
@@ -8,6 +10,16 @@ type AuctionRuleType struct {
 	TypeName    string `gorm:"column:type_name"`          // 类型名称
 	TypeContent string `gorm:"column:type_content"`       // 类型说明
 }
+
+type TypeInfo struct {
+	TypeID   string `json:"type_id"`
+	TypeName string `json:"type_name"`
+}
+
+const (
+	RuleTypeStateActive   = "启用"
+	RuleTypeStateUnActive = "禁用"
+)
 
 func (AuctionRuleType) TableName() string {
 	return "auction_rule_type"
@@ -40,6 +52,22 @@ func UpdateAuctionRuleType(id string, updatedFields interface{}) error {
 func DeleteAuctionRuleType(id string) error {
 	return DB.Delete(&AuctionRuleType{}, "type_id = ?", id).Error
 }
+
+// QueryAllAuctionRuleType 查询所有启用状态下的拍卖规则类型
+func QueryAllAuctionRuleType() ([]TypeInfo, error) {
+	var list []TypeInfo
+	err := DB.Model(&AuctionRuleType{}).
+		Select("type_id", "type_name").
+		Where("type_status = ?", RuleTypeStateActive).
+		Find(&list).Error
+
+	if err != nil {
+		return nil, fmt.Errorf("failed to query AuctionRuleType: %v", err)
+	}
+
+	return list, nil
+}
+
 func GetAllAuctionRuleTypeWithConditions(conditions map[string]interface{}, page, pageSize int) ([]AuctionRuleType, error) {
 	var task []AuctionRuleType
 

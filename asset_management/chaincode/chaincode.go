@@ -11,10 +11,9 @@ type AssetContract struct {
 }
 
 type Asset struct {
-	AssetHash        string           `json:"hash"`              //资产信息hash
-	AssessmentResult AssessmentResult `json:"assessment_result"` //资产评估结果
-	Owner            string           `json:"owner"`             //当前所有人
-	Notes            string           `json:"notes"`             //备注
+	AssetHash string `json:"hash"`  //资产信息hash
+	Owner     string `json:"owner"` //当前所有人
+	Notes     string `json:"notes"` //备注
 }
 
 // 拍卖任务记录
@@ -37,7 +36,10 @@ type AssessmentResult struct {
 	AssessmentNote string `json:"note"`
 }
 
-const FormatId = "auction_%s"
+const (
+	FormatId     = "auction_%s"
+	AssessmentId = "assessment_%s"
+)
 
 // InitAsset 初始化资产
 func (a *AssetContract) InitAsset(ctx contractapi.TransactionContextInterface, assetId, hash, owner, notes string) error {
@@ -50,6 +52,32 @@ func (a *AssetContract) InitAsset(ctx contractapi.TransactionContextInterface, a
 		return fmt.Errorf("the record already exists")
 	}
 	asset := Asset{
+		AssetHash: hash,
+		Notes:     notes,
+		Owner:     owner,
+	}
+	assetBytes, err := json.Marshal(asset)
+	if err != nil {
+		return fmt.Errorf("failed to marshal record: %v", err)
+	}
+
+	return ctx.GetStub().PutState(assetId, assetBytes)
+}
+
+// 修改资产信息
+func (a *AssetContract) UpdateAsset(ctx contractapi.TransactionContextInterface, assetId, hash, owner, notes string) error {
+	exist, err := ctx.GetStub().GetState(assetId)
+	if err != nil {
+		return fmt.Errorf("the record already exists")
+	}
+	if exist == nil {
+		return fmt.Errorf("the record not exists")
+	}
+	var asset Asset
+	if err := json.Unmarshal(exist, &asset); err != nil {
+		return fmt.Errorf("failed to unmarshal record: %v", err)
+	}
+	asset = Asset{
 		AssetHash: hash,
 		Notes:     notes,
 		Owner:     owner,
@@ -84,17 +112,12 @@ func (a *AssetContract) UploadAssessmentResult(ctx contractapi.TransactionContex
 		AssessmentResult: result,
 		AssessmentNote:   note,
 	}
-	var asset Asset
-	if err := json.Unmarshal(exist, &asset); err != nil {
-		return fmt.Errorf("failed to unmarshal record: %v", err)
-	}
-	asset.AssessmentResult = assessment
 
-	assetBytes, err := json.Marshal(asset)
+	assetBytes, err := json.Marshal(assessment)
 	if err != nil {
 		return fmt.Errorf("failed to marshal record: %v", err)
 	}
-	return ctx.GetStub().PutState(assetId, assetBytes)
+	return ctx.GetStub().PutState(fmt.Sprintf(AssessmentId, assetId), assetBytes)
 }
 
 // UpdateOwner 更新资产所有者
@@ -184,6 +207,28 @@ func (a *AssetContract) QueryAssetHistory(ctx contractapi.TransactionContextInte
 		assets = append(assets, asset)
 	}
 	return assets, nil
+}
+
+// 查询评估结果历史记录
+func (a *AssetContract) QueryAssessmentHistory(ctx contractapi.TransactionContextInterface, assetId string) ([]AssessmentResult, error) {
+	resultsIterator, err := ctx.GetStub().GetHistoryForKey(fmt.Sprintf(AssessmentId, assetId))
+	if err != nil {
+		return nil, err
+	}
+	defer resultsIterator.Close()
+	var assessments []AssessmentResult
+	for resultsIterator.HasNext() {
+		response, err := resultsIterator.Next()
+		if err != nil {
+			return nil, err
+		}
+		var assessment AssessmentResult
+		if err := json.Unmarshal(response.Value, &assessment); err != nil {
+			return nil, err
+		}
+		assessments = append(assessments, assessment)
+	}
+	return assessments, nil
 }
 
 // 查询资产信息

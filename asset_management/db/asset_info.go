@@ -13,6 +13,16 @@ type AssetInfo struct {
 	CreateTime   string `gorm:"column:create_time"`         // 记录创建时间
 }
 
+const (
+	AssetStatusPending = "待上架"
+	//上架中、拍卖中、已流拍、已售出、已下架
+	AssetStatusOnShelf  = "上架中"
+	AssetStatusAuction  = "拍卖中"
+	AssetStatusFail     = "已流拍"
+	AssetStatusSoldOut  = "已售出"
+	AssetStatusOffShelf = "已下架"
+)
+
 func (a *AssetInfo) TableName() string {
 	return "asset_info"
 }

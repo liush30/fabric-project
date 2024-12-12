@@ -16,6 +16,10 @@ type AuctionTask struct {
 	//Result      string `gorm:"column:result"`             // 拍卖结果
 }
 
+const (
+	TaskStatePending = "pending"
+)
+
 func (AuctionTask) TableName() string {
 	return "auction_task"
 }

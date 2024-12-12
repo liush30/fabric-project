@@ -13,7 +13,7 @@ func RegisterNormalRouter(r *gin.Engine) {
 		normalRouter.POST("/evaluator/apply", middleware.AuthMiddleware(), handle.AssessorApply)
 		normalRouter.GET("/cancel/buyer/apply", handle.CancelBuyerRequest)
 		normalRouter.GET("/cancel/evaluator/apply", handle.CancelAssessorRequest)
-		normalRouter.POST("/query/buyer/apply", handle.QueryBuyerRequest)
-		normalRouter.POST("/query/evaluator/apply", handle.QueryAssessorRequest)
+		normalRouter.POST("/query/buyer/apply", middleware.AuthMiddleware(), handle.QueryBuyerRequest)
+		normalRouter.POST("/query/evaluator/apply", middleware.AuthMiddleware(), handle.QueryAssessorRequest)
 	}
 }

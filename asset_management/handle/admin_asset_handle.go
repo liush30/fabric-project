@@ -14,7 +14,8 @@ type AssetReq struct {
 	AssetName    string `json:"asset_name"`
 	AssetDate    string `json:"asset_date"`
 	AssetContent string `json:"asset_content"`
-	AssetOwner   string `gorm:"column:asset_owner"`
+	AssetOwner   string `json:"asset_owner"`
+	Evaluator    string `json:"evaluator"`
 }
 
 // CreateAsset 上传资产信息
@@ -27,13 +28,15 @@ func CreateAsset(c *gin.Context) {
 	//获取file
 	file, err := c.FormFile("file")
 	asset := db.AssetInfo{
-		AssetID:      tool.GenerateUUIDWithoutDashes(),
-		AssetName:    info.AssetName,
-		AssetDate:    info.AssetDate,
-		AssetContent: info.AssetContent,
-		AssetStatus:  db.AssetStatusPending,
-		AssetOwner:   info.AssetOwner,
-		CreateTime:   tool.GetNowTime(),
+		AssetID:         tool.GenerateUUIDWithoutDashes(),
+		AssetName:       info.AssetName,
+		AssetDate:       info.AssetDate,
+		AssetContent:    info.AssetContent,
+		AssetStatus:     db.AssetStatusPending,
+		AssetOwner:      info.AssetOwner,
+		CreateTime:      tool.GetNowTime(),
+		Evaluator:       info.Evaluator,
+		EvaluatorStatus: db.EvaluatorStatusPending,
 	}
 	if err == nil {
 		path := "assets/" + file.Filename
@@ -185,4 +188,87 @@ func UpdateAssetStatus(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "更新成功"})
+}
+
+type AssetDetail struct {
+	AssetInfo         db.AssetInfo              `json:"info"`
+	AssetHistory      []fabric.Asset            `json:"history"`
+	AuctionHistory    []fabric.Auction          `json:"auction_history"`
+	AssessmentHistory []fabric.AssessmentResult `json:"assessments"`
+	AuctionDetail     []AuctionDetail           `json:"auction_detail"`
+}
+
+type AuctionDetail struct {
+	TaskID      string `json:"task_id"`      // 任务ID
+	TaskState   string `json:"task_state"`   // 任务状态
+	TaskContent string `json:"task_content"` // 任务说明
+	StartTime   string `json:"start_time"`   // 拍卖开始时间
+	EndTime     string `json:"end_time"`     // 拍卖结束时间
+	PublishTime string `json:"publish_time"` // 发布时间
+	RuleTitle   string `json:"rule_title"`   // 规则标题
+	AssetHash   string `json:"hash"`
+	Result      string `json:"result"`
+	Notes       string `json:"notes"`
+}
+
+func QueryAssetDetail(c *gin.Context) {
+	var detail AssetDetail
+	//获取asset_id
+	assetId := c.Query("asset_id")
+	if assetId == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "asset_id不存在"})
+		return
+	}
+	info, err := db.GetAssetInfoByID(assetId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "查询失败:" + err.Error()})
+		return
+	}
+	detail.AssetInfo = *info
+	history, err := fabric.QueryAssessmentHistory(assetId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "查询评估记录失败:" + err.Error()})
+		return
+	}
+	detail.AssessmentHistory = history
+	assetHistory, err := fabric.QueryAssetHistory(assetId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "查询资产历史记录失败:" + err.Error()})
+		return
+	}
+	detail.AssetHistory = assetHistory
+	auctionHistory, err := fabric.QueryAuctionHistory(assetId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "查询拍卖历史记录失败:" + err.Error()})
+		return
+	}
+	for _, auction := range auctionHistory {
+		//根据任务id查询任务
+		task, err := db.GetAuctionTaskByID(auction.AuctionId)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "查询拍卖任务失败:" + err.Error()})
+			return
+		}
+		rule, err := db.GetAuctionRuleByID(task.RuleID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "查询拍卖规则失败:" + err.Error()})
+			return
+		}
+		auctionDetail := AuctionDetail{
+			TaskID:      task.TaskID,
+			TaskState:   task.TaskState,
+			TaskContent: task.TaskContent,
+			StartTime:   task.StartTime,
+			EndTime:     task.EndTime,
+			PublishTime: task.PublishTime,
+			RuleTitle:   rule.RuleTitle,
+			AssetHash:   auction.AssetHash,
+			Result:      auction.Result,
+			Notes:       auction.Notes,
+		}
+		detail.AuctionDetail = append(detail.AuctionDetail, auctionDetail)
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": detail})
+
 }

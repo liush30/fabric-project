@@ -113,3 +113,17 @@ func QueryAuctionRule(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"data": info, "total": len(info)})
 }
+
+func QueryAuctionRuleByID(c *gin.Context) {
+	ruleId := c.Query("rule_id")
+	if ruleId == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "rule_id不存在"})
+		return
+	}
+	info, err := db.GetAuctionRuleByID(ruleId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "查询失败:" + err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": info})
+}

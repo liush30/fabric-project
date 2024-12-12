@@ -56,6 +56,21 @@ func UpdateUserInfo(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "更新成功"})
 }
 
+// 获取指定用户的信息
+func QueryUserInfoByID(c *gin.Context) {
+	userId := c.Query("user_id")
+	if userId == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "user_id不存在"})
+		return
+	}
+	info, err := db.GetUserInfoByID(userId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "查询失败:" + err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": info})
+}
+
 // DeleteUserInfo 删除用户信息
 func DeleteUserInfo(c *gin.Context) {
 	userId := c.Query("user_id")

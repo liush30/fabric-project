@@ -1,0 +1,19 @@
+console_mode: true #是否打开控制台模式
+logLevel: Debug #日志级别 Debug、Info、Warn、Error、DPanic、Panic、Fatal
+showsql: true #是否显示sql语句
+nodeEnv: dev #环境： dev 开发环境 pro 生产环境
+
+#================= Web配置 =================
+web:
+  port: 8080
+#==============数据库配置=====================
+mysql:
+  host: zhoupb.com:33060
+  port: 3306
+  user: lsh
+  dbname: db_charging
+  passwd: lsh666hh
+
+JWT:
+  jwtSingKey: vdfhuigvhsdfyugvsdrfukvdafukvbdfvbfvhjfb
+  expirationtime: 50 #小时

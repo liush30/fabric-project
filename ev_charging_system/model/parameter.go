@@ -1,4 +1,4 @@
-package db
+package model
 
 type Parameter struct {
 	ParamID    string `gorm:"primaryKey;type:varchar(64);not null"`

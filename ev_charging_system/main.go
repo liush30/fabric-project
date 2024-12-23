@@ -39,7 +39,7 @@ func main() {
 	corsConfig.AllowHeaders = []string{"Authorization", "Content-Type"}
 	r.Use(cors.New(corsConfig))
 	r.Use(gin.RecoveryWithWriter(log.LoggerWriter(), handleRecovery), gin.LoggerWithWriter(log.LoggerWriter()))
-
+	// tool.GenDao()
 	// 启动服务
 	if err := r.Run(":8080"); err != nil {
 		panic(err)

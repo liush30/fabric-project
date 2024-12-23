@@ -1,4 +1,4 @@
-package db
+package model
 
 // Repairman 维修员信息表
 type Repairman struct {

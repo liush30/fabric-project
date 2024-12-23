@@ -1,4 +1,4 @@
-package db
+package model
 
 type RepairRequest struct {
 	RepairID    string `gorm:"primaryKey;type:varchar(64);not null"`

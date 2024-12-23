@@ -1,4 +1,4 @@
-package db
+package model
 
 // Station 充电站基础信息表
 type Station struct {

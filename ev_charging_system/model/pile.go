@@ -1,4 +1,4 @@
-package db
+package model
 
 // Pile 充电桩信息表
 type Pile struct {

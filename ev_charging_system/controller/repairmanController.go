@@ -178,6 +178,6 @@ func (r repairmanController) UpdateUser(g *gin.Context) {
 		response.RespondDefaultErr(g)
 		return
 	}
-	//log.Info(update)
+	log.Info(update)
 	response.RespondOK(g)
 }

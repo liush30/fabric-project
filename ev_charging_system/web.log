@@ -294,3 +294,20 @@ Key: 'UserPageDto.PageSize' Error:Field validation for 'PageSize' failed on the 
 2024-12-29T19:54:05.411+0800	INFO	controller/repairmanController.go:181	[{1 <nil>}]
 [GIN] 2024/12/29 - 19:54:05 | 200 |     60.9645ms |       127.0.0.1 | POST     "/user/update"
 [GIN] 2024/12/29 - 19:54:17 | 200 |     28.6736ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 20:40:30 | 200 |     56.5062ms |       127.0.0.1 | POST     "/user/add"
+[GIN] 2024/12/29 - 20:41:11 | 200 |     95.4161ms |       127.0.0.1 | POST     "/station/add"
+[GIN] 2024/12/29 - 20:43:43 | 404 |            0s |       127.0.0.1 | GET      "/station/info/bb8876286d0047edac3d26e135ae2a51"
+[GIN] 2024/12/29 - 20:44:25 | 404 |            0s |       127.0.0.1 | GET      "/station/info/bb8876286d0047edac3d26e135ae2a51"
+[GIN] 2024/12/29 - 20:45:59 | 200 |     30.3807ms |       127.0.0.1 | GET      "/station/info/bb8876286d0047edac3d26e135ae2a51"
+[GIN] 2024/12/29 - 20:46:13 | 200 |     29.7571ms |       127.0.0.1 | GET      "/user/info/vdrfbdfbsfb"
+2024-12-29T20:46:25.693+0800	ERROR	controller/stationController.go:46	[record not found]
+[GIN] 2024/12/29 - 20:46:25 | 200 |     32.0531ms |       127.0.0.1 | GET      "/station/info/bb8876286d0047edac3d26e135ae2a512"
+[GIN] 2024/12/29 - 20:46:33 | 200 |     30.9823ms |       127.0.0.1 | GET      "/station/info/bb8876286d0047edac3d26e135ae2a51"
+[GIN] 2024/12/29 - 20:50:39 | 200 |     26.9248ms |       127.0.0.1 | POST     "/station/page"
+2024-12-29T20:51:38.559+0800	INFO	controller/stationController.go:68	[{0 <nil>}]
+[GIN] 2024/12/29 - 20:51:38 | 200 |     66.1291ms |       127.0.0.1 | POST     "/station/update"
+[GIN] 2024/12/29 - 20:51:50 | 200 |     31.6763ms |       127.0.0.1 | POST     "/station/page"
+[GIN] 2024/12/29 - 20:51:58 | 200 |     25.6488ms |       127.0.0.1 | POST     "/station/page"
+2024-12-29T20:52:49.432+0800	INFO	controller/stationController.go:68	[{1 <nil>}]
+[GIN] 2024/12/29 - 20:52:49 | 200 |      59.379ms |       127.0.0.1 | POST     "/station/update"
+[GIN] 2024/12/29 - 20:52:53 | 200 |     39.8738ms |       127.0.0.1 | POST     "/station/page"

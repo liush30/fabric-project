@@ -1,16 +1,16 @@
 package model
 
 type RepairRequest struct {
-	RepairID    string `gorm:"primaryKey;type:varchar(64);not null"`
-	StationID   string `gorm:"type:varchar(64);not null"`
-	PileID      string `gorm:"type:varchar(64);not null"`
-	RepairmanID string `gorm:"type:varchar(64);not null"`
-	Description string `gorm:"type:varchar(200)"`
-	Status      string `gorm:"type:varchar(10);not null"`
-	Reason      string `gorm:"type:varchar(200)"`
-	Result      string `gorm:"type:varchar(200)"`
-	RequestTime string `gorm:"type:varchar(26);not null"`
-	EndTime     string `gorm:"type:varchar(26)"`
+	RepairID    string `gorm:"column:repair_id;primaryKey;size:64" json:"repairId"`
+	StationID   string `gorm:"column:station_id;size:64;not null" json:"stationId"`
+	PileID      string `gorm:"column:pile_id;size:64;not null" json:"pileId"`
+	RepairmanID string `gorm:"column:repairman_id;size:64;not null" json:"repairmanId"`
+	Description string `gorm:"column:description;size:200" json:"description,omitempty"`
+	Status      int8   `gorm:"column:status;default:0" json:"status"` // 待处理、已取消、处理中、已完成
+	Reason      string `gorm:"column:reason;size:200" json:"reason,omitempty"`
+	Result      string `gorm:"column:result;size:200" json:"result,omitempty"`
+	RequestTime int64  `gorm:"column:request_time" json:"requestTime,omitempty"`
+	EndTime     int64  `gorm:"column:end_time" json:"endTime,omitempty"`
 }
 
 func (RepairRequest) TableName() string {

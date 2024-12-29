@@ -32,11 +32,11 @@ func newRepairRequest(db *gorm.DB, opts ...gen.DOOption) repairRequest {
 	_repairRequest.PileID = field.NewString(tableName, "pile_id")
 	_repairRequest.RepairmanID = field.NewString(tableName, "repairman_id")
 	_repairRequest.Description = field.NewString(tableName, "description")
-	_repairRequest.Status = field.NewString(tableName, "status")
+	_repairRequest.Status = field.NewInt8(tableName, "status")
 	_repairRequest.Reason = field.NewString(tableName, "reason")
 	_repairRequest.Result = field.NewString(tableName, "result")
-	_repairRequest.RequestTime = field.NewString(tableName, "request_time")
-	_repairRequest.EndTime = field.NewString(tableName, "end_time")
+	_repairRequest.RequestTime = field.NewInt64(tableName, "request_time")
+	_repairRequest.EndTime = field.NewInt64(tableName, "end_time")
 
 	_repairRequest.fillFieldMap()
 
@@ -52,11 +52,11 @@ type repairRequest struct {
 	PileID      field.String
 	RepairmanID field.String
 	Description field.String
-	Status      field.String
+	Status      field.Int8
 	Reason      field.String
 	Result      field.String
-	RequestTime field.String
-	EndTime     field.String
+	RequestTime field.Int64
+	EndTime     field.Int64
 
 	fieldMap map[string]field.Expr
 }
@@ -78,11 +78,11 @@ func (r *repairRequest) updateTableName(table string) *repairRequest {
 	r.PileID = field.NewString(table, "pile_id")
 	r.RepairmanID = field.NewString(table, "repairman_id")
 	r.Description = field.NewString(table, "description")
-	r.Status = field.NewString(table, "status")
+	r.Status = field.NewInt8(table, "status")
 	r.Reason = field.NewString(table, "reason")
 	r.Result = field.NewString(table, "result")
-	r.RequestTime = field.NewString(table, "request_time")
-	r.EndTime = field.NewString(table, "end_time")
+	r.RequestTime = field.NewInt64(table, "request_time")
+	r.EndTime = field.NewInt64(table, "end_time")
 
 	r.fillFieldMap()
 

@@ -28,6 +28,7 @@ func newStation(db *gorm.DB, opts ...gen.DOOption) station {
 	tableName := _station.stationDo.TableName()
 	_station.ALL = field.NewAsterisk(tableName)
 	_station.StationID = field.NewString(tableName, "station_id")
+	_station.RepairmanID = field.NewString(tableName, "t_repairman")
 	_station.StationName = field.NewString(tableName, "station_name")
 	_station.Location = field.NewString(tableName, "location")
 	_station.City = field.NewString(tableName, "city")
@@ -35,7 +36,7 @@ func newStation(db *gorm.DB, opts ...gen.DOOption) station {
 	_station.ContactNumber = field.NewString(tableName, "contact_number")
 	_station.ManagerName = field.NewString(tableName, "manager_name")
 	_station.OpeningHours = field.NewString(tableName, "opening_hours")
-	_station.Status = field.NewString(tableName, "status")
+	_station.Status = field.NewInt8(tableName, "status")
 	_station.Description = field.NewString(tableName, "description")
 	_station.LoginPwd = field.NewString(tableName, "login_pwd")
 
@@ -49,6 +50,7 @@ type station struct {
 
 	ALL           field.Asterisk
 	StationID     field.String
+	RepairmanID   field.String
 	StationName   field.String
 	Location      field.String
 	City          field.String
@@ -56,7 +58,7 @@ type station struct {
 	ContactNumber field.String
 	ManagerName   field.String
 	OpeningHours  field.String
-	Status        field.String
+	Status        field.Int8
 	Description   field.String
 	LoginPwd      field.String
 
@@ -76,6 +78,7 @@ func (s station) As(alias string) *station {
 func (s *station) updateTableName(table string) *station {
 	s.ALL = field.NewAsterisk(table)
 	s.StationID = field.NewString(table, "station_id")
+	s.RepairmanID = field.NewString(table, "t_repairman")
 	s.StationName = field.NewString(table, "station_name")
 	s.Location = field.NewString(table, "location")
 	s.City = field.NewString(table, "city")
@@ -83,7 +86,7 @@ func (s *station) updateTableName(table string) *station {
 	s.ContactNumber = field.NewString(table, "contact_number")
 	s.ManagerName = field.NewString(table, "manager_name")
 	s.OpeningHours = field.NewString(table, "opening_hours")
-	s.Status = field.NewString(table, "status")
+	s.Status = field.NewInt8(table, "status")
 	s.Description = field.NewString(table, "description")
 	s.LoginPwd = field.NewString(table, "login_pwd")
 
@@ -110,8 +113,9 @@ func (s *station) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (s *station) fillFieldMap() {
-	s.fieldMap = make(map[string]field.Expr, 11)
+	s.fieldMap = make(map[string]field.Expr, 12)
 	s.fieldMap["station_id"] = s.StationID
+	s.fieldMap["t_repairman"] = s.RepairmanID
 	s.fieldMap["station_name"] = s.StationName
 	s.fieldMap["location"] = s.Location
 	s.fieldMap["city"] = s.City

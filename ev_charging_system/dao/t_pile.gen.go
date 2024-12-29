@@ -33,8 +33,8 @@ func newPile(db *gorm.DB, opts ...gen.DOOption) pile {
 	_pile.PileName = field.NewString(tableName, "pile_name")
 	_pile.Description = field.NewString(tableName, "description")
 	_pile.Location = field.NewString(tableName, "location")
-	_pile.Status = field.NewString(tableName, "status")
-	_pile.Type = field.NewString(tableName, "type")
+	_pile.Status = field.NewInt8(tableName, "status")
+	_pile.Type = field.NewInt8(tableName, "type")
 
 	_pile.fillFieldMap()
 
@@ -51,8 +51,8 @@ type pile struct {
 	PileName    field.String
 	Description field.String
 	Location    field.String
-	Status      field.String
-	Type        field.String
+	Status      field.Int8
+	Type        field.Int8
 
 	fieldMap map[string]field.Expr
 }
@@ -75,8 +75,8 @@ func (p *pile) updateTableName(table string) *pile {
 	p.PileName = field.NewString(table, "pile_name")
 	p.Description = field.NewString(table, "description")
 	p.Location = field.NewString(table, "location")
-	p.Status = field.NewString(table, "status")
-	p.Type = field.NewString(table, "type")
+	p.Status = field.NewInt8(table, "status")
+	p.Type = field.NewInt8(table, "type")
 
 	p.fillFieldMap()
 

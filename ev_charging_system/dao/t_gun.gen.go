@@ -29,8 +29,8 @@ func newGun(db *gorm.DB, opts ...gen.DOOption) gun {
 	_gun.ALL = field.NewAsterisk(tableName)
 	_gun.GunID = field.NewString(tableName, "gun_id")
 	_gun.PileID = field.NewString(tableName, "pile_id")
-	_gun.GunType = field.NewString(tableName, "gun_type")
-	_gun.GunStatus = field.NewString(tableName, "gun_status")
+	_gun.GunType = field.NewInt8(tableName, "gun_type")
+	_gun.GunStatus = field.NewInt8(tableName, "gun_status")
 	_gun.Power = field.NewString(tableName, "power")
 	_gun.Voltage = field.NewFloat64(tableName, "voltage")
 	_gun.Current = field.NewFloat64(tableName, "current")
@@ -47,8 +47,8 @@ type gun struct {
 	ALL        field.Asterisk
 	GunID      field.String
 	PileID     field.String
-	GunType    field.String
-	GunStatus  field.String
+	GunType    field.Int8
+	GunStatus  field.Int8
 	Power      field.String
 	Voltage    field.Float64
 	Current    field.Float64
@@ -71,8 +71,8 @@ func (g *gun) updateTableName(table string) *gun {
 	g.ALL = field.NewAsterisk(table)
 	g.GunID = field.NewString(table, "gun_id")
 	g.PileID = field.NewString(table, "pile_id")
-	g.GunType = field.NewString(table, "gun_type")
-	g.GunStatus = field.NewString(table, "gun_status")
+	g.GunType = field.NewInt8(table, "gun_type")
+	g.GunStatus = field.NewInt8(table, "gun_status")
 	g.Power = field.NewString(table, "power")
 	g.Voltage = field.NewFloat64(table, "voltage")
 	g.Current = field.NewFloat64(table, "current")

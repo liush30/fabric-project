@@ -30,14 +30,14 @@ func newFeeRule(db *gorm.DB, opts ...gen.DOOption) feeRule {
 	_feeRule.RuleID = field.NewString(tableName, "rule_id")
 	_feeRule.StationID = field.NewString(tableName, "station_id")
 	_feeRule.RuleName = field.NewString(tableName, "rule_name")
-	_feeRule.ChargingType = field.NewString(tableName, "charging_type")
+	_feeRule.ChargingType = field.NewInt8(tableName, "charging_type")
 	_feeRule.UnitPrice = field.NewString(tableName, "unit_price")
 	_feeRule.PeakRate = field.NewFloat64(tableName, "peak_rate")
 	_feeRule.OffPeakRate = field.NewFloat64(tableName, "off_peak_rate")
 	_feeRule.MinCharge = field.NewFloat64(tableName, "min_charge")
 	_feeRule.MaxCharge = field.NewFloat64(tableName, "max_charge")
-	_feeRule.StartTime = field.NewString(tableName, "start_time")
-	_feeRule.EndTime = field.NewString(tableName, "end_time")
+	_feeRule.StartTime = field.NewInt64(tableName, "start_time")
+	_feeRule.EndTime = field.NewInt64(tableName, "end_time")
 
 	_feeRule.fillFieldMap()
 
@@ -51,14 +51,14 @@ type feeRule struct {
 	RuleID       field.String
 	StationID    field.String
 	RuleName     field.String
-	ChargingType field.String
+	ChargingType field.Int8
 	UnitPrice    field.String
 	PeakRate     field.Float64
 	OffPeakRate  field.Float64
 	MinCharge    field.Float64
 	MaxCharge    field.Float64
-	StartTime    field.String
-	EndTime      field.String
+	StartTime    field.Int64
+	EndTime      field.Int64
 
 	fieldMap map[string]field.Expr
 }
@@ -78,14 +78,14 @@ func (f *feeRule) updateTableName(table string) *feeRule {
 	f.RuleID = field.NewString(table, "rule_id")
 	f.StationID = field.NewString(table, "station_id")
 	f.RuleName = field.NewString(table, "rule_name")
-	f.ChargingType = field.NewString(table, "charging_type")
+	f.ChargingType = field.NewInt8(table, "charging_type")
 	f.UnitPrice = field.NewString(table, "unit_price")
 	f.PeakRate = field.NewFloat64(table, "peak_rate")
 	f.OffPeakRate = field.NewFloat64(table, "off_peak_rate")
 	f.MinCharge = field.NewFloat64(table, "min_charge")
 	f.MaxCharge = field.NewFloat64(table, "max_charge")
-	f.StartTime = field.NewString(table, "start_time")
-	f.EndTime = field.NewString(table, "end_time")
+	f.StartTime = field.NewInt64(table, "start_time")
+	f.EndTime = field.NewInt64(table, "end_time")
 
 	f.fillFieldMap()
 

@@ -7,19 +7,25 @@ import (
 	"time"
 )
 
-const jwtSecretKey = "community-secret-key"
+const jwtSecretKey = "VNERKNVDKJVNFDCcjsklcnmsdklcnsdklc"
+
+type User struct {
+	RepairmanId string `json:"repairmanId"`
+	UserId      string `json:"userId"`
+	UserType    int    `json:"userType"`
+}
 
 type JWTClaims struct {
-	UserId string `json:"userId"`
+	UserInfo User
 	jwt.StandardClaims
 }
 
 // GenerateJWT 生成 JWT Token
-func GenerateJWT(userId string) (string, error) {
+func GenerateJWT(user User) (string, error) {
 	claims := JWTClaims{
-		UserId: userId,
+		UserInfo: user,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Hour * 1).Unix(),
+			ExpiresAt: time.Now().Add(time.Hour * 24).Unix(),
 			Issuer:    "go-health",
 		},
 	}

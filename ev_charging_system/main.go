@@ -2,8 +2,9 @@ package main
 
 import (
 	"ev_charging_system/config"
+	"ev_charging_system/controller"
 	"ev_charging_system/log"
-
+	"ev_charging_system/middleware"
 	"runtime"
 
 	"fmt"
@@ -39,13 +40,22 @@ func main() {
 	corsConfig.AllowHeaders = []string{"Authorization", "Content-Type"}
 	r.Use(cors.New(corsConfig))
 	r.Use(gin.RecoveryWithWriter(log.LoggerWriter(), handleRecovery), gin.LoggerWithWriter(log.LoggerWriter()))
-	// tool.GenDao()
+	//tool.GenDao()
+	user := r.Group("/user")
+	user.POST("/login", controller.RepairmanController.Login)
+	user.Use(middleware.AuthMiddleware())
+	user.GET("/info", controller.RepairmanController.Info)
+	user.POST("/page", controller.RepairmanController.ListAndPage)
+	user.GET("/info/:userId", controller.RepairmanController.GetUserById)
+	user.POST("/add", controller.RepairmanController.AddUser)
+	user.POST("/update", controller.RepairmanController.UpdateUser)
+
 	// 启动服务
-	if err := r.Run(":8080"); err != nil {
+	if err := r.Run(fmt.Sprintf("0.0.0.0:%s", config.ChargeConfig.WebInfo.Port)); err != nil {
 		panic(err)
 	}
 }
 
 func handleRecovery(c *gin.Context, err interface{}) {
-	c.JSON(1010, "internal server error")
+	c.JSON(500, "internal server error")
 }

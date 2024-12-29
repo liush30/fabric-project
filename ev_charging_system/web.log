@@ -1,2 +1,296 @@
 2024-12-16T22:48:49.144+0800	INFO	ev_charging_system/mian.go:37	[hello]
 2024-12-16T23:05:36.151+0800	INFO	ev_charging_system/main.go:35	[222]
+[GIN] 2024/12/29 - 12:56:59 | 404 |            0s |       127.0.0.1 | GET      "/"
+[GIN] 2024/12/29 - 12:57:01 | 404 |            0s |       127.0.0.1 | GET      "/favicon.ico"
+[GIN] 2024/12/29 - 12:58:38 | 404 |            0s |       127.0.0.1 | GET      "/"
+
+
+[31m2024/12/29 14:46:44 [Recovery] 2024/12/29 - 14:46:44 panic recovered:
+POST /login HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 56
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+runtime error: invalid memory address or nil pointer dereference
+C:/Program Files/Go/src/runtime/panic.go:261 (0xd3fea6)
+	panicmem: panic(memoryError)
+C:/Program Files/Go/src/runtime/signal_windows.go:401 (0xd3fe76)
+	sigpanic: panicmem()
+E:/code/goWork/fabric-project/ev_charging_system/controller/repairmanController.go:27 (0x1220d42)
+	repairmanController.Login: repairInfo.UserName.Value(req.UserName)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x1219b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x1219b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x121a9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x121a9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x121a9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x121a9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x1219b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x1219b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x1218f51)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x12189c0)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x1218651)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0x10d230d)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0x10ce8e7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0xd5d900)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2024/12/29 14:47:24 [Recovery] 2024/12/29 - 14:47:24 panic recovered:
+POST /login HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 56
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+runtime error: invalid memory address or nil pointer dereference
+C:/Program Files/Go/src/runtime/panic.go:261 (0xaefea6)
+	panicmem: panic(memoryError)
+C:/Program Files/Go/src/runtime/signal_windows.go:401 (0xaefe76)
+	sigpanic: panicmem()
+E:/code/goWork/fabric-project/ev_charging_system/controller/repairmanController.go:27 (0xfd0d42)
+	repairmanController.Login: repairInfo.UserName.Value(req.UserName)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfc9b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0xfc9b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfca9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0xfca9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfca9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0xfca9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfc9b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0xfc9b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfc8f51)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0xfc89c0)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0xfc8651)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0xe8230d)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0xe7e8e7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0xb0d900)
+	goexit: BYTE	$0x90	// NOP
+[0m
+2024-12-29T14:49:41.836+0800	INFO	controller/repairmanController.go:25	[{admin 123456}]
+
+
+[31m2024/12/29 14:49:41 [Recovery] 2024/12/29 - 14:49:41 panic recovered:
+POST /login HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 56
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+runtime error: invalid memory address or nil pointer dereference
+C:/Program Files/Go/src/runtime/panic.go:261 (0x18fea6)
+	panicmem: panic(memoryError)
+C:/Program Files/Go/src/runtime/signal_windows.go:401 (0x18fe76)
+	sigpanic: panicmem()
+E:/code/goWork/fabric-project/ev_charging_system/controller/repairmanController.go:28 (0x670e0d)
+	repairmanController.Login: repairInfo.UserName.Value(req.UserName)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x669b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x669b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x66a9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x66a9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x66a9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x66a9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x669b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x669b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x668f51)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x6689c0)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x668651)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0x52230d)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0x51e8e7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0x1ad900)
+	goexit: BYTE	$0x90	// NOP
+[0m
+2024-12-29T14:51:18.755+0800	INFO	controller/repairmanController.go:25	[{admin 123456}]
+
+
+[31m2024/12/29 14:51:18 [Recovery] 2024/12/29 - 14:51:18 panic recovered:
+POST /login HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 56
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+runtime error: invalid memory address or nil pointer dereference
+C:/Program Files/Go/src/runtime/panic.go:261 (0xf1fea6)
+	panicmem: panic(memoryError)
+C:/Program Files/Go/src/runtime/signal_windows.go:401 (0xf1fe76)
+	sigpanic: panicmem()
+E:/code/goWork/fabric-project/ev_charging_system/controller/repairmanController.go:28 (0x1400e0d)
+	repairmanController.Login: repairInfo.UserName.Value(req.UserName)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13f9b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x13f9b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13fa9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x13fa9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13fa9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x13fa9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13f9b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x13f9b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13f8f51)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x13f89c0)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x13f8651)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0x12b230d)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0x12ae8e7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0xf3d900)
+	goexit: BYTE	$0x90	// NOP
+[0m
+2024-12-29T14:52:25.433+0800	INFO	controller/repairmanController.go:25	[{admin 123456}]
+
+
+[31m2024/12/29 14:52:25 [Recovery] 2024/12/29 - 14:52:25 panic recovered:
+POST /login HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 56
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+runtime error: invalid memory address or nil pointer dereference
+C:/Program Files/Go/src/runtime/panic.go:261 (0xf0fea6)
+	panicmem: panic(memoryError)
+C:/Program Files/Go/src/runtime/signal_windows.go:401 (0xf0fe76)
+	sigpanic: panicmem()
+E:/code/goWork/fabric-project/ev_charging_system/controller/repairmanController.go:28 (0x13f0e0d)
+	repairmanController.Login: repairInfo.UserName.Value(req.UserName)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13e9b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x13e9b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13ea9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x13ea9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13ea9f9)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x13ea9e7)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13e9b24)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x13e9b0b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x13e8f51)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x13e89c0)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x13e8651)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0x12a230d)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0x129e8e7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0xf2d900)
+	goexit: BYTE	$0x90	// NOP
+[0m
+2024-12-29T15:32:05.925+0800	INFO	controller/repairmanController.go:25	[{admin 123456}]
+2024-12-29T15:32:05.951+0800	INFO	controller/repairmanController.go:33	[userInfom 0xc00011f290]
+[GIN] 2024/12/29 - 15:32:05 | 200 |     26.7345ms |       127.0.0.1 | POST     "/login"
+2024-12-29T15:33:46.512+0800	INFO	controller/repairmanController.go:27	[userInfom 0xc00065a900]
+[GIN] 2024/12/29 - 15:33:46 | 200 |      26.744ms |       127.0.0.1 | POST     "/login"
+[GIN] 2024/12/29 - 15:34:43 | 200 |     28.2952ms |       127.0.0.1 | POST     "/login"
+2024-12-29T15:38:05.460+0800	ERROR	controller/repairmanController.go:29	[sql: Scan error on column index 0, name "`t_repairman`.`user_name` = ?": unsupported Scan, storing driver.Value type int64 into type *model.Repairman]
+[GIN] 2024/12/29 - 15:38:05 | 200 |     26.9535ms |       127.0.0.1 | POST     "/login"
+2024-12-29T15:40:18.921+0800	ERROR	controller/repairmanController.go:30	[sql: Scan error on column index 0, name "`t_repairman`.`user_name` = ?": unsupported Scan, storing driver.Value type int64 into type *model.Repairman]
+[GIN] 2024/12/29 - 15:40:18 | 200 |     26.2976ms |       127.0.0.1 | POST     "/login"
+2024-12-29T15:42:02.669+0800	ERROR	controller/repairmanController.go:30	[sql: Scan error on column index 0, name "`t_repairman`.`user_name` = ?": unsupported Scan, storing driver.Value type int64 into type *model.Repairman]
+[GIN] 2024/12/29 - 15:42:02 | 200 |     29.2711ms |       127.0.0.1 | POST     "/login"
+[GIN] 2024/12/29 - 15:43:03 | 200 |     20.9978ms |       127.0.0.1 | POST     "/login"
+[GIN] 2024/12/29 - 17:38:57 | 200 |      22.611ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/29 - 17:47:22 | 200 |      34.812ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/29 - 17:47:41 | 200 |            0s |       127.0.0.1 | GET      "/user/info"
+2024-12-29T17:49:24.524+0800	INFO	controller/repairmanController.go:53	[{vdrfbdfbsfb admin 2}]
+2024-12-29T17:49:24.546+0800	ERROR	controller/repairmanController.go:56	[record not found]
+[GIN] 2024/12/29 - 17:49:24 | 200 |     23.7216ms |       127.0.0.1 | GET      "/user/info"
+2024-12-29T17:50:00.110+0800	INFO	controller/repairmanController.go:53	[{vdrfbdfbsfb admin 2}]
+[GIN] 2024/12/29 - 17:50:00 | 200 |     26.6793ms |       127.0.0.1 | GET      "/user/info"
+2024-12-29T18:21:27.599+0800	ERROR	controller/repairmanController.go:66	[Key: 'UserPageDto.PageNum' Error:Field validation for 'PageNum' failed on the 'lte' tag
+Key: 'UserPageDto.PageSize' Error:Field validation for 'PageSize' failed on the 'lte' tag
+Key: 'UserPageDto.UserType' Error:Field validation for 'UserType' failed on the 'gte' tag]
+[GIN] 2024/12/29 - 18:21:27 | 400 |      2.2717ms |       127.0.0.1 | POST     "/user/page"
+2024-12-29T18:23:56.830+0800	ERROR	controller/repairmanController.go:66	[Key: 'UserPageDto.PageSize' Error:Field validation for 'PageSize' failed on the 'lte' tag]
+[GIN] 2024/12/29 - 18:23:56 | 400 |      1.4649ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 18:26:04 | 200 |    161.4222ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 18:26:12 | 200 |     43.7076ms |       127.0.0.1 | POST     "/user/page"
+2024-12-29T18:26:15.429+0800	ERROR	controller/repairmanController.go:85	[invalid connection]
+[GIN] 2024/12/29 - 18:26:15 | 500 |   19.1810536s |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 18:26:16 | 200 |      69.023ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 18:26:20 | 200 |     27.7547ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 19:43:38 | 200 |     23.8393ms |       127.0.0.1 | GET      "/user/info/vdrfbdfbsfb"
+2024-12-29T19:49:17.756+0800	ERROR	controller/repairmanController.go:67	[Key: 'UserPageDto.PageNum' Error:Field validation for 'PageNum' failed on the 'gte' tag
+Key: 'UserPageDto.PageSize' Error:Field validation for 'PageSize' failed on the 'gte' tag]
+[GIN] 2024/12/29 - 19:49:17 | 400 |      1.6285ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 19:49:44 | 200 |     49.3271ms |       127.0.0.1 | POST     "/user/add"
+[GIN] 2024/12/29 - 19:50:24 | 200 |     23.9017ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/29 - 19:53:16 | 200 |     23.2105ms |       127.0.0.1 | POST     "/user/page"
+2024-12-29T19:54:05.411+0800	INFO	controller/repairmanController.go:181	[{1 <nil>}]
+[GIN] 2024/12/29 - 19:54:05 | 200 |     60.9645ms |       127.0.0.1 | POST     "/user/update"
+[GIN] 2024/12/29 - 19:54:17 | 200 |     28.6736ms |       127.0.0.1 | POST     "/user/page"

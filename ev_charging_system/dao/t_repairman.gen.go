@@ -28,11 +28,14 @@ func newRepairman(db *gorm.DB, opts ...gen.DOOption) repairman {
 	tableName := _repairman.repairmanDo.TableName()
 	_repairman.ALL = field.NewAsterisk(tableName)
 	_repairman.RepairmanID = field.NewString(tableName, "repairman_id")
+	_repairman.UserName = field.NewString(tableName, "user_name")
+	_repairman.Password = field.NewString(tableName, "password")
 	_repairman.Name = field.NewString(tableName, "name")
 	_repairman.ContactInfo = field.NewString(tableName, "contact_info")
-	_repairman.Status = field.NewString(tableName, "status")
+	_repairman.Status = field.NewInt8(tableName, "status")
 	_repairman.Description = field.NewString(tableName, "description")
-	_repairman.RegistTime = field.NewString(tableName, "regist_time")
+	_repairman.UserType = field.NewInt8(tableName, "user_type")
+	_repairman.RegistTime = field.NewTime(tableName, "regist_time")
 
 	_repairman.fillFieldMap()
 
@@ -44,11 +47,14 @@ type repairman struct {
 
 	ALL         field.Asterisk
 	RepairmanID field.String
+	UserName    field.String
+	Password    field.String
 	Name        field.String
 	ContactInfo field.String
-	Status      field.String
+	Status      field.Int8
 	Description field.String
-	RegistTime  field.String
+	UserType    field.Int8
+	RegistTime  field.Time
 
 	fieldMap map[string]field.Expr
 }
@@ -66,11 +72,14 @@ func (r repairman) As(alias string) *repairman {
 func (r *repairman) updateTableName(table string) *repairman {
 	r.ALL = field.NewAsterisk(table)
 	r.RepairmanID = field.NewString(table, "repairman_id")
+	r.UserName = field.NewString(table, "user_name")
+	r.Password = field.NewString(table, "password")
 	r.Name = field.NewString(table, "name")
 	r.ContactInfo = field.NewString(table, "contact_info")
-	r.Status = field.NewString(table, "status")
+	r.Status = field.NewInt8(table, "status")
 	r.Description = field.NewString(table, "description")
-	r.RegistTime = field.NewString(table, "regist_time")
+	r.UserType = field.NewInt8(table, "user_type")
+	r.RegistTime = field.NewTime(table, "regist_time")
 
 	r.fillFieldMap()
 
@@ -97,12 +106,15 @@ func (r *repairman) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (r *repairman) fillFieldMap() {
-	r.fieldMap = make(map[string]field.Expr, 6)
+	r.fieldMap = make(map[string]field.Expr, 9)
 	r.fieldMap["repairman_id"] = r.RepairmanID
+	r.fieldMap["user_name"] = r.UserName
+	r.fieldMap["password"] = r.Password
 	r.fieldMap["name"] = r.Name
 	r.fieldMap["contact_info"] = r.ContactInfo
 	r.fieldMap["status"] = r.Status
 	r.fieldMap["description"] = r.Description
+	r.fieldMap["user_type"] = r.UserType
 	r.fieldMap["regist_time"] = r.RegistTime
 }
 

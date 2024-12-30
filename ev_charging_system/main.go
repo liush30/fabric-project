@@ -73,6 +73,7 @@ func main() {
 	repairRequest.POST("/add", controller.RepairRequestController.AddRepairRequest)
 	repairRequest.POST("/update", controller.RepairRequestController.UpdateRepairRequest)
 	repairRequest.GET("/info/:repairRequestId", controller.RepairRequestController.GetRepairRequestById)
+	repairRequest.POST("/me/add", controller.RepairRequestController.AddMeRepairRequest)
 
 	fee := r.Group("fee")
 	fee.POST("/page", controller.FeeController.FeeByPage)
@@ -87,6 +88,7 @@ func main() {
 	gun.POST("/add", controller.GunController.AddGun)
 	gun.POST("/update", controller.GunController.UpdateGun)
 	gun.GET("/info/:gunId", controller.GunController.GetGunById)
+	gun.GET("/list/pile/:pileId", controller.GunController.GetGunById)
 
 	// 启动服务
 	if err := r.Run(fmt.Sprintf("0.0.0.0:%s", config.ChargeConfig.WebInfo.Port)); err != nil {

@@ -14,8 +14,8 @@ import "time"
 
 type Repairman struct {
 	RepairmanID string    `gorm:"column:repairman_id;primaryKey;size:64" json:"repairmanId"`
-	UserName    string    `gorm:"column:user_name;size:60;not null" json:"userName"`
-	Password    string    `gorm:"column:password;size:255;not null" json:"password"` // 密码
+	UserName    string    `gorm:"column:user_name;size:60;not null" json:"userName" binding:"required"`
+	Password    string    `gorm:"column:password;size:255;not null" json:"password" binding:"required"` // 密码
 	Name        string    `gorm:"column:name;size:20" json:"name,omitempty"`
 	ContactInfo string    `gorm:"column:contact_info;size:64;not null" json:"contactInfo"`
 	Status      int8      `gorm:"column:status;not null;default:0" json:"status"` // 0 空闲中、1 工作中、2 已休息、3 已离职

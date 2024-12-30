@@ -5,6 +5,7 @@ import (
 	"ev_charging_system/log"
 	"ev_charging_system/model"
 	"ev_charging_system/model/dto"
+	"ev_charging_system/model/vo"
 	"ev_charging_system/response"
 	"ev_charging_system/tool"
 	"github.com/gin-gonic/gin"
@@ -81,25 +82,33 @@ func (r repairmanController) ListAndPage(g *gin.Context) {
 	page := (req.PageNum - 1) * req.PageSize
 
 	if req.UserType == 3 {
-		pages, _, err := dao.DaoService.RepairmanDAO.FindByPage(page, req.PageSize)
+		pages, count, err := dao.DaoService.RepairmanDAO.FindByPage(page, req.PageSize)
 		if err != nil {
 			log.Error(err)
 			response.RespondDefaultErr(g)
 			return
 		}
 
-		response.RespondWithData(g, pages)
+		pageResult := vo.Page[*model.Repairman]{
+			Data:  pages,
+			Count: count,
+		}
+		response.RespondWithData(g, pageResult)
 		return
 	}
 
-	pages, _, err := dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.UserType.Eq(req.UserType)).FindByPage(page, req.PageSize)
+	pages, count, err := dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.UserType.Eq(req.UserType)).FindByPage(page, req.PageSize)
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)
 		return
 	}
 
-	response.RespondWithData(g, pages)
+	pageResult := vo.Page[*model.Repairman]{
+		Data:  pages,
+		Count: count,
+	}
+	response.RespondWithData(g, pageResult)
 }
 
 func (r repairmanController) GetUserById(g *gin.Context) {

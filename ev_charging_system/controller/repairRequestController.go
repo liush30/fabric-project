@@ -5,9 +5,11 @@ import (
 	"ev_charging_system/log"
 	"ev_charging_system/model"
 	"ev_charging_system/model/dto"
+	"ev_charging_system/model/vo"
 	"ev_charging_system/response"
 	"ev_charging_system/tool"
 	"github.com/gin-gonic/gin"
+	"time"
 )
 
 var RepairRequestController = &repairRequestController{}
@@ -81,25 +83,70 @@ func (s repairRequestController) RepairRequestByPage(g *gin.Context) {
 	page := (req.PageNum - 1) * req.PageSize
 
 	if req.UserType == 3 {
-		pages, _, err := dao.DaoService.RequestReDAO.FindByPage(page, req.PageSize)
+		pages, count, err := dao.DaoService.RequestReDAO.FindByPage(page, req.PageSize)
 		if err != nil {
 			log.Error(err)
 			response.RespondDefaultErr(g)
 			return
 		}
 
-		response.RespondWithData(g, pages)
+		pageResult := vo.Page[*model.RepairRequest]{
+			Data:  pages,
+			Count: count,
+		}
+
+		response.RespondWithData(g, pageResult)
 		return
 	}
 
-	pages, _, err := dao.DaoService.RequestReDAO.Where(dao.DaoService.Query.RepairRequest.Status.Eq(req.UserType)).FindByPage(page, req.PageSize)
+	pages, count, err := dao.DaoService.RequestReDAO.Where(dao.DaoService.Query.RepairRequest.Status.Eq(req.UserType)).FindByPage(page, req.PageSize)
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)
 		return
 	}
 
-	response.RespondWithData(g, pages)
+	pageResult := vo.Page[*model.RepairRequest]{
+		Data:  pages,
+		Count: count,
+	}
+
+	response.RespondWithData(g, pageResult)
+}
+
+// 新增充电站报修信息
+func (s repairRequestController) AddMeRepairRequest(g *gin.Context) {
+	req := model.RepairRequest{}
+	if err := g.Bind(&req); err != nil {
+		log.Error(err)
+		response.RespondInvalidArgsErr(g)
+		return
+	}
+
+	user, exists := g.Get("user")
+	if !exists {
+		response.RespondWithErrCode(g, 401, "not login")
+		return
+	}
+	userInfo := user.(tool.User)
+
+	staioninfo, err := dao.DaoService.StationDao.Where(dao.DaoService.Query.Station.RepairmanID.Eq(userInfo.RepairmanId)).Take()
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+	req.StationID = staioninfo.StationID
+	req.RequestTime = time.Now().Unix()
+	req.RepairID = tool.GenerateUUIDWithoutDashes()
+	err = dao.DaoService.RequestReDAO.Create(&req)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+
+	response.RespondOK(g)
 }
 
 // 新增充电站

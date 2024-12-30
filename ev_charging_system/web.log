@@ -380,3 +380,112 @@ C:/Program Files/Go/src/net/http/server.go:2039 (0x131fcc7)
 C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0xda0f20)
 	goexit: BYTE	$0x90	// NOP
 [0m
+
+
+[31m2024/12/30 21:16:04 [Recovery] 2024/12/30 - 21:16:04 panic recovered:
+POST /pile/me/add HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Connection: keep-alive
+Content-Length: 146
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+failed to read TLS certifcate file: open ./../cert/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt: The system cannot find the path specified.
+E:/code/goWork/fabric-project/ev_charging_system/fabric/fabric.go:30 (0xe8207e)
+	newGrpcConnection: panic(fmt.Errorf("failed to read TLS certifcate file: %w", err))
+E:/code/goWork/fabric-project/ev_charging_system/fabric/pile.go:19 (0xe823d5)
+	RegisterPile: clientConnection := newGrpcConnection()
+E:/code/goWork/fabric-project/ev_charging_system/controller/pileController.go:223 (0xe8960a)
+	pileController.AddMePile: err = fabric.RegisterPile(req.PileID, pileHash)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xd1190a)
+	(*Context).Next: c.handlers[c.index](c)
+E:/code/goWork/fabric-project/ev_charging_system/middleware/middleware.go:38 (0xe95199)
+	main.AuthMiddleware.func3: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xd1eaa4)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0xd1ea8b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xd1f979)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0xd1f967)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xd1f979)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0xd1f967)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xd1eaa4)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0xd1ea8b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xd1ded1)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0xd1d940)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0xd1d471)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0xb849ed)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0xb7fcc7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0x600f20)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2024/12/30 21:17:12 [Recovery] 2024/12/30 - 21:17:12 panic recovered:
+POST /pile/me/add HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Connection: keep-alive
+Content-Length: 146
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+failed to read TLS certifcate file: open ../cert/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt: The system cannot find the path specified.
+E:/code/goWork/fabric-project/ev_charging_system/fabric/fabric.go:30 (0x113207e)
+	newGrpcConnection: panic(fmt.Errorf("failed to read TLS certifcate file: %w", err))
+E:/code/goWork/fabric-project/ev_charging_system/fabric/pile.go:19 (0x11323d5)
+	RegisterPile: clientConnection := newGrpcConnection()
+E:/code/goWork/fabric-project/ev_charging_system/controller/pileController.go:223 (0x113960a)
+	pileController.AddMePile: err = fabric.RegisterPile(req.PileID, pileHash)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfc190a)
+	(*Context).Next: c.handlers[c.index](c)
+E:/code/goWork/fabric-project/ev_charging_system/middleware/middleware.go:38 (0x1145199)
+	main.AuthMiddleware.func3: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfceaa4)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0xfcea8b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfcf979)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0xfcf967)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfcf979)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0xfcf967)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfceaa4)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0xfcea8b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0xfcded1)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0xfcd940)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0xfcd471)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0xe349ed)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0xe2fcc7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0x8b0f20)
+	goexit: BYTE	$0x90	// NOP
+[0m
+[GIN] 2024/12/30 - 21:19:43 | 200 |     3.385297s |       127.0.0.1 | POST     "/pile/me/add"

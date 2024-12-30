@@ -5,6 +5,7 @@ import (
 	"ev_charging_system/log"
 	"ev_charging_system/model"
 	"ev_charging_system/model/dto"
+	"ev_charging_system/model/vo"
 	"ev_charging_system/response"
 	"ev_charging_system/tool"
 	"github.com/gin-gonic/gin"
@@ -81,14 +82,19 @@ func (s guneController) GunByPage(g *gin.Context) {
 	page := (req.PageNum - 1) * req.PageSize
 
 	//if req.UserType == 3 {
-	pages, _, err := dao.DaoService.GunDao.FindByPage(page, req.PageSize)
+	pages, count, err := dao.DaoService.GunDao.FindByPage(page, req.PageSize)
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)
 		return
 	}
 
-	response.RespondWithData(g, pages)
+	pageResult := vo.Page[*model.Gun]{
+		Data:  pages,
+		Count: count,
+	}
+
+	response.RespondWithData(g, pageResult)
 	return
 	//}
 
@@ -100,6 +106,22 @@ func (s guneController) GunByPage(g *gin.Context) {
 	//}
 	//
 	//response.RespondWithData(g, pages)
+}
+
+func (s guneController) GetGunListByPileId(g *gin.Context) {
+	pileId := g.Param("pileId")
+	if len(pileId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+
+	GunData, err := dao.DaoService.GunDao.Where(dao.DaoService.Query.Gun.PileID.Eq(pileId)).Find()
+	if err != nil {
+		log.Error(err)
+		response.RespondErr(g, "Gun not exist")
+		return
+	}
+	response.RespondWithData(g, GunData)
 }
 
 // 新增充电站

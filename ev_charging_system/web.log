@@ -311,3 +311,72 @@ Key: 'UserPageDto.PageSize' Error:Field validation for 'PageSize' failed on the 
 2024-12-29T20:52:49.432+0800	INFO	controller/stationController.go:68	[{1 <nil>}]
 [GIN] 2024/12/29 - 20:52:49 | 200 |      59.379ms |       127.0.0.1 | POST     "/station/update"
 [GIN] 2024/12/29 - 20:52:53 | 200 |     39.8738ms |       127.0.0.1 | POST     "/station/page"
+[GIN] 2024/12/30 - 20:09:49 | 200 |      32.776ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/30 - 20:10:52 | 200 |     23.5978ms |       127.0.0.1 | POST     "/station/page"
+[GIN] 2024/12/30 - 20:11:49 | 200 |     62.0569ms |       127.0.0.1 | POST     "/user/add"
+[GIN] 2024/12/30 - 20:12:16 | 200 |     27.3685ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/30 - 20:13:15 | 200 |     92.3197ms |       127.0.0.1 | POST     "/station/add"
+[GIN] 2024/12/30 - 20:13:21 | 200 |     24.7296ms |       127.0.0.1 | POST     "/station/page"
+2024-12-30T20:13:47.078+0800	ERROR	controller/repairmanController.go:27	[record not found]
+[GIN] 2024/12/30 - 20:13:47 | 200 |     25.9174ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/30 - 20:14:54 | 200 |     23.2186ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/30 - 20:39:47 | 200 |     80.3427ms |       127.0.0.1 | POST     "/pile/me/page"
+[GIN] 2024/12/30 - 20:50:04 | 404 |            0s |       127.0.0.1 | POST     "/station/me/add"
+[GIN] 2024/12/30 - 20:50:22 | 404 |            0s |       127.0.0.1 | POST     "/station/me/add"
+[GIN] 2024/12/30 - 20:50:43 | 200 |     85.7331ms |       127.0.0.1 | POST     "/pile/me/add"
+[GIN] 2024/12/30 - 20:51:20 | 200 |     52.5965ms |       127.0.0.1 | POST     "/pile/me/page"
+[GIN] 2024/12/30 - 20:51:53 | 200 |     53.1083ms |       127.0.0.1 | POST     "/pile/me/page"
+
+
+[31m2024/12/30 21:06:25 [Recovery] 2024/12/30 - 21:06:25 panic recovered:
+POST /pile/me/add HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Connection: keep-alive
+Content-Length: 146
+Content-Type: application/json
+User-Agent: Apifox/1.0.0 (https://apifox.com)
+
+
+failed to read TLS certifcate file: open ./../cert/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt: The system cannot find the path specified.
+E:/code/goWork/fabric-project/ev_charging_system/fabric/fabric.go:30 (0x162207e)
+	newGrpcConnection: panic(fmt.Errorf("failed to read TLS certifcate file: %w", err))
+E:/code/goWork/fabric-project/ev_charging_system/fabric/pile.go:19 (0x16223d5)
+	RegisterPile: clientConnection := newGrpcConnection()
+E:/code/goWork/fabric-project/ev_charging_system/controller/pileController.go:223 (0x162960a)
+	pileController.AddMePile: err = fabric.RegisterPile(req.PileID, pileHash)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x14b190a)
+	(*Context).Next: c.handlers[c.index](c)
+E:/code/goWork/fabric-project/ev_charging_system/middleware/middleware.go:38 (0x1635199)
+	main.AuthMiddleware.func3: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x14beaa4)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x14bea8b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x14bf979)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x14bf967)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x14bf979)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x14bf967)
+	CustomRecoveryWithWriter.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x14beaa4)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x14bea8b)
+	LoggerWithConfig.func1: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x14bded1)
+	(*Context).Next: c.handlers[c.index](c)
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x14bd940)
+	(*Engine).handleHTTPRequest: c.Next()
+C:/Users/13069/go/pkg/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x14bd471)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:3137 (0x13249ed)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:2039 (0x131fcc7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0xda0f20)
+	goexit: BYTE	$0x90	// NOP
+[0m

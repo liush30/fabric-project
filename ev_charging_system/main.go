@@ -56,6 +56,7 @@ func main() {
 	station.POST("/add", controller.StationController.AddStation)
 	station.POST("/update", controller.StationController.UpdateStation)
 	station.GET("/info/:stationId", controller.StationController.GetStationById)
+	station.GET("/info", controller.StationController.GetMeStationInfo)
 
 	pile := r.Group("pile")
 	pile.POST("/page", controller.PileController.PileByPage)
@@ -63,6 +64,8 @@ func main() {
 	pile.POST("/add", controller.PileController.AddPile)
 	pile.POST("/update", controller.PileController.UpdatePile)
 	pile.GET("/info/:pileId", controller.PileController.GetPileById)
+	pile.POST("/me/page", controller.PileController.GetMePilePage)
+	pile.POST("/me/add", controller.PileController.AddMePile)
 
 	repairRequest := r.Group("repair")
 	repairRequest.POST("/page", controller.RepairRequestController.RepairRequestByPage)

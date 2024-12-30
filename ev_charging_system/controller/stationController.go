@@ -102,6 +102,24 @@ func (s stationController) StationByPage(g *gin.Context) {
 	response.RespondWithData(g, pages)
 }
 
+func (s stationController) GetMeStationInfo(g *gin.Context) {
+	user, exists := g.Get("user")
+	if !exists {
+		response.RespondWithErrCode(g, 401, "not login")
+		return
+	}
+	userInfo := user.(tool.User)
+
+	staioninfo, err := dao.DaoService.StationDao.Where(dao.DaoService.Query.Station.RepairmanID.Eq(userInfo.RepairmanId)).Take()
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g);
+		return
+	}
+
+	response.RespondWithData(g, staioninfo)
+}
+
 // 新增充电站
 //func (s stationController) AddStation(g *gin.Context) {
 //

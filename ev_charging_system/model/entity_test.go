@@ -7,19 +7,15 @@ import (
 )
 
 func TestGenerateJson(t *testing.T) {
-	data, err := json.Marshal(&Station{
-		StationID:     "",
-		RepairmanID:   "",
-		StationName:   "",
-		Location:      "",
-		City:          "",
-		District:      "",
-		ContactNumber: "",
-		ManagerName:   "",
-		OpeningHours:  "",
-		Status:        0,
-		Description:   "",
-		LoginPwd:      "",
+	data, err := json.Marshal(&Pile{
+		PileID:      "",
+		StationID:   "",
+		PileCode:    "",
+		PileName:    "",
+		Description: "",
+		Location:    "",
+		Status:      0,
+		Type:        0,
 	})
 	if err != nil {
 		t.Fatal(err)

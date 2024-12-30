@@ -1,6 +1,6 @@
 package vo
 
-type Page struct {
-	Data  []interface{}
-	Count int
+type Page[T any] struct {
+	Data  []T
+	Count int64
 }

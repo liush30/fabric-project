@@ -1,7 +1,9 @@
 package controller
 
 import (
+	"encoding/json"
 	"ev_charging_system/dao"
+	"ev_charging_system/fabric"
 	"ev_charging_system/log"
 	"ev_charging_system/model"
 	"ev_charging_system/model/dto"
@@ -32,12 +34,25 @@ func (s guneController) AddGun(g *gin.Context) {
 		response.RespondDefaultErr(g)
 		return
 	}
+	reqJson, err := json.Marshal(req)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+	reqHash := tool.CalculateSHA256Hash(tool.EncodeToString(reqJson))
+	err = fabric.RegisterGun(req.PileID, req.GunID, reqHash)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
 
 	response.RespondOK(g)
 }
 
 func (s guneController) GetGunById(g *gin.Context) {
-	gunId := g.Param("GunId")
+	gunId := g.Param("gunId")
 	if len(gunId) == 0 {
 		response.RespondDefaultErr(g)
 		return
@@ -50,6 +65,61 @@ func (s guneController) GetGunById(g *gin.Context) {
 		return
 	}
 	response.RespondWithData(g, GunData)
+}
+
+func (s guneController) GetGunHistory(g *gin.Context) {
+	gunId := g.Param("gunId")
+	if len(gunId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+	data, err := dao.DaoService.GunDao.Where(dao.DaoService.Query.Gun.GunID.Eq(gunId)).Take()
+	if err != nil {
+		log.Error(err)
+		response.RespondErr(g, "Gun not exist")
+		return
+	}
+	log.Info(data.PileID, data.GunID)
+	guns, err := fabric.QueryGunHistory(data.PileID, data.GunID)
+	if err != nil {
+		response.RespondDefaultErr(g)
+		return
+	}
+	response.RespondWithData(g, guns)
+}
+
+func (s guneController) GetGunHistoryByPileId(g *gin.Context) {
+
+	pileId := g.Param("pileId")
+	if len(pileId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+	guns, err := fabric.QueryGunByPile(pileId)
+	if err != nil {
+		response.RespondDefaultErr(g)
+		return
+	}
+	response.RespondWithData(g, guns)
+
+}
+func (s guneController) DeleteGun(g *gin.Context) {
+	gunId := g.Param("gunId")
+	if len(gunId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+
+	info, err := dao.DaoService.GunDao.Where(dao.DaoService.Query.Gun.GunID.Eq(gunId)).Delete()
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	} else if info.RowsAffected == 0 {
+		response.RespondErr(g, "affected 0 rows")
+		return
+	}
+	response.RespondOK(g)
 }
 
 func (s guneController) UpdateGun(g *gin.Context) {
@@ -65,8 +135,31 @@ func (s guneController) UpdateGun(g *gin.Context) {
 		log.Error(err)
 		response.RespondDefaultErr(g)
 		return
+	} else if update.RowsAffected == 0 {
+		response.RespondErr(g, "affected 0 rows")
+		return
 	}
-	log.Info(update)
+
+	GunData, err := dao.DaoService.GunDao.Where(dao.DaoService.Query.Gun.GunID.Eq(req.GunID)).Take()
+	if err != nil {
+		log.Error(err)
+		response.RespondErr(g, "Gun not exist")
+		return
+	}
+	gunJson, err := json.Marshal(GunData)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+	gunHash := tool.CalculateSHA256Hash(string(gunJson))
+	err = fabric.UpdateGun(GunData.PileID, GunData.GunID, gunHash)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+
 	response.RespondOK(g)
 }
 

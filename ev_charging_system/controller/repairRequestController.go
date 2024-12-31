@@ -9,7 +9,7 @@ import (
 	"ev_charging_system/response"
 	"ev_charging_system/tool"
 	"github.com/gin-gonic/gin"
-	"time"
+	"strconv"
 )
 
 var RepairRequestController = &repairRequestController{}
@@ -19,13 +19,21 @@ type repairRequestController struct {
 
 // 新增充电站
 func (s repairRequestController) AddRepairRequest(g *gin.Context) {
+	user, exists := g.Get("user")
+	if !exists {
+		response.RespondWithErrCode(g, 401, "not login")
+		return
+	}
+	userInfo := user.(tool.User)
+
 	req := model.RepairRequest{}
 	if err := g.Bind(&req); err != nil {
 		log.Error(err)
 		response.RespondInvalidArgsErr(g)
 		return
 	}
-
+	req.StationID = userInfo.RepairmanId
+	req.RequestTime = tool.GetNowTime()
 	req.RepairID = tool.GenerateUUIDWithoutDashes()
 	err := dao.DaoService.RequestReDAO.Create(&req)
 	if err != nil {
@@ -34,6 +42,35 @@ func (s repairRequestController) AddRepairRequest(g *gin.Context) {
 		return
 	}
 
+	response.RespondOK(g)
+}
+func (s repairRequestController) CancelRepairRequest(g *gin.Context) {
+	RepairRequestId := g.Param("repairRequestId")
+	if len(RepairRequestId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+	status, exists := g.GetQuery("status")
+	if !exists {
+		response.RespondInvalidArgsErr(g, "status not exist")
+		return
+	}
+	intStatus, err := strconv.Atoi(status)
+	if err != nil {
+		log.Error(err)
+		response.RespondInvalidArgsErr(g, "status not int")
+		return
+	}
+
+	updateData, err := dao.DaoService.RequestReDAO.Where(dao.DaoService.Query.RepairRequest.RepairID.Eq(RepairRequestId)).Updates(&model.RepairRequest{Status: int8(intStatus), EndTime: tool.GetNowTime()})
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	} else if updateData.RowsAffected == 0 {
+		response.RespondErr(g, "RepairRequest not exist")
+		return
+	}
 	response.RespondOK(g)
 }
 
@@ -73,6 +110,13 @@ func (s repairRequestController) UpdateRepairRequest(g *gin.Context) {
 
 // 查询充电站分页信息
 func (s repairRequestController) RepairRequestByPage(g *gin.Context) {
+	user, exists := g.Get("user")
+	if !exists {
+		response.RespondWithErrCode(g, 401, "not login")
+		return
+	}
+	userInfo := user.(tool.User)
+
 	req := dto.UserPageDto{}
 	if err := g.Bind(&req); err != nil {
 		log.Error(err)
@@ -81,9 +125,12 @@ func (s repairRequestController) RepairRequestByPage(g *gin.Context) {
 	}
 
 	page := (req.PageNum - 1) * req.PageSize
+	var pages []*model.RepairRequest
+	var count int64
+	var err error
 
-	if req.UserType == 3 {
-		pages, count, err := dao.DaoService.RequestReDAO.FindByPage(page, req.PageSize)
+	if req.State == 4 {
+		pages, count, err = dao.DaoService.RequestReDAO.Where(dao.DaoService.Query.RepairRequest.StationID.Eq(userInfo.RepairmanId)).FindByPage(page, req.PageSize)
 		if err != nil {
 			log.Error(err)
 			response.RespondDefaultErr(g)
@@ -99,7 +146,7 @@ func (s repairRequestController) RepairRequestByPage(g *gin.Context) {
 		return
 	}
 
-	pages, count, err := dao.DaoService.RequestReDAO.Where(dao.DaoService.Query.RepairRequest.Status.Eq(req.UserType)).FindByPage(page, req.PageSize)
+	pages, count, err = dao.DaoService.RequestReDAO.Where(dao.DaoService.Query.RepairRequest.Status.Eq(req.UserType), dao.DaoService.Query.RepairRequest.StationID.Eq(userInfo.RepairmanId)).FindByPage(page, req.PageSize)
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)
@@ -137,7 +184,7 @@ func (s repairRequestController) AddMeRepairRequest(g *gin.Context) {
 		return
 	}
 	req.StationID = staioninfo.StationID
-	req.RequestTime = time.Now().Unix()
+	//req.RequestTime = time.Now().Unix()
 	req.RepairID = tool.GenerateUUIDWithoutDashes()
 	err = dao.DaoService.RequestReDAO.Create(&req)
 	if err != nil {

@@ -489,3 +489,719 @@ C:/Program Files/Go/src/runtime/asm_amd64.s:1695 (0x8b0f20)
 	goexit: BYTE	$0x90	// NOP
 [0m
 [GIN] 2024/12/30 - 21:19:43 | 200 |     3.385297s |       127.0.0.1 | POST     "/pile/me/add"
+2024-12-31T10:23:44.937+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 10:23:44 | 200 |     40.6135ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 10:24:16 | 200 |     15.9085ms |       127.0.0.1 | GET      "/user/info"
+[GIN] 2024/12/31 - 10:32:17 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:32:40 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:32:42 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:33:35 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:36:02 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:36:22 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T10:37:08.680+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 10:37:08 | 200 |     12.9872ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 10:37:08 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T10:40:25.503+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 10:40:25 | 200 |     12.7956ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 10:40:25 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:49:02 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:49:52 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:50:11 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:50:27 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:50:39 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:52:06 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:52:31 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 10:54:24 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 11:11:21 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 11:17:30 | 200 |     17.1415ms |       127.0.0.1 | POST     "/station/page"
+[GIN] 2024/12/31 - 11:20:54 | 404 |            0s |       127.0.0.1 | GET      "/user/page"
+[GIN] 2024/12/31 - 11:21:36 | 404 |            0s |       127.0.0.1 | GET      "/user/page"
+[GIN] 2024/12/31 - 11:21:40 | 200 |            0s |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/31 - 11:52:04 | 401 |            0s |             ::1 | POST     "/user/page"
+2024-12-31T11:52:13.148+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 11:52:13 | 200 |      14.886ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 11:52:13 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 11:52:17 | 401 |            0s |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 11:52:44 | 200 |     13.7351ms |       127.0.0.1 | POST     "/user/login"
+2024-12-31T11:53:24.043+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 11:53:24 | 200 |     12.8955ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 11:53:24 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 11:53:27 | 401 |            0s |             ::1 | POST     "/user/page"
+2024-12-31T11:54:17.843+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 11:54:17 | 200 |     14.1828ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 11:54:17 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T11:54:56.865+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 11:54:56 | 200 |     12.6057ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 11:54:56 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T11:55:29.208+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 11:55:29 | 200 |     13.2178ms |             ::1 | POST     "/user/login"
+2024-12-31T11:55:49.863+0800	ERROR	controller/repairmanController.go:28	[record not found]
+[GIN] 2024/12/31 - 11:55:49 | 200 |     13.1152ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 11:56:45 | 200 |     13.4405ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 11:56:49 | 401 |            0s |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 11:57:23 | 200 |      12.373ms |             ::1 | POST     "/user/login"
+2024-12-31T11:57:28.261+0800	ERROR	controller/repairmanController.go:68	[json: cannot unmarshal string into Go struct field UserPageDto.userType of type int8]
+[GIN] 2024/12/31 - 11:57:28 | 400 |       507.6µs |             ::1 | POST     "/user/page"
+2024-12-31T11:58:10.406+0800	ERROR	controller/repairmanController.go:68	[json: cannot unmarshal string into Go struct field UserPageDto.userType of type int8]
+[GIN] 2024/12/31 - 11:58:10 | 400 |            0s |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 11:58:21 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T11:58:21.915+0800	ERROR	controller/repairmanController.go:68	[json: cannot unmarshal string into Go struct field UserPageDto.userType of type int8]
+[GIN] 2024/12/31 - 11:58:21 | 400 |       555.9µs |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 11:58:52 | 200 |       702.4µs |       127.0.0.1 | POST     "/user/page"
+2024-12-31T11:59:14.450+0800	ERROR	controller/repairmanController.go:68	[json: cannot unmarshal string into Go struct field UserPageDto.userType of type int8]
+[GIN] 2024/12/31 - 11:59:14 | 400 |       506.3µs |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 11:59:24 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T11:59:25.250+0800	ERROR	controller/repairmanController.go:68	[json: cannot unmarshal string into Go struct field UserPageDto.userType of type int8]
+[GIN] 2024/12/31 - 11:59:25 | 400 |       552.6µs |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:01:17 | 200 |     14.8429ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:01:24 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 12:01:24 | 200 |     12.9385ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:01:47 | 200 |            0s |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:02:13 | 200 |     13.0172ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:02:26 | 200 |     12.4927ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:02:56 | 200 |     13.2106ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:03:07 | 200 |     84.0831ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:03:54 | 200 |    164.2498ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:04:14 | 200 |     16.1091ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:07:29 | 200 |     60.4136ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:09:13 | 200 |     12.7385ms |             ::1 | POST     "/user/page"
+2024-12-31T12:10:50.360+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:10:50 | 400 |      2.3972ms |             ::1 | POST     "/user/add"
+[GIN] 2024/12/31 - 12:12:35 | 200 |     18.2854ms |             ::1 | POST     "/user/page"
+2024-12-31T12:12:52.489+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:12:52 | 400 |      2.1751ms |             ::1 | POST     "/user/add"
+2024-12-31T12:15:30.459+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:15:30 | 400 |       505.4µs |       127.0.0.1 | POST     "/user/add"
+2024-12-31T12:15:33.843+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:15:33 | 400 |       505.2µs |       127.0.0.1 | POST     "/user/add"
+[GIN] 2024/12/31 - 12:17:14 | 200 |     13.9239ms |             ::1 | POST     "/user/page"
+2024-12-31T12:17:32.009+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:17:32 | 400 |         504µs |             ::1 | POST     "/user/add"
+2024-12-31T12:18:37.452+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:18:37 | 400 |            0s |             ::1 | POST     "/user/add"
+2024-12-31T12:19:17.140+0800	ERROR	controller/repairmanController.go:134	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:19:17 | 400 |       532.9µs |             ::1 | POST     "/user/add"
+[GIN] 2024/12/31 - 12:19:49 | 200 |     13.0797ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:19:59 | 200 |     74.9803ms |             ::1 | POST     "/user/add"
+[GIN] 2024/12/31 - 12:20:08 | 200 |     45.2909ms |             ::1 | POST     "/user/add"
+[GIN] 2024/12/31 - 12:20:15 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 12:20:15 | 200 |     13.7467ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:21:09 | 200 |       12.22ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:21:17 | 200 |     14.1141ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:21:27 | 200 |     31.5458ms |             ::1 | POST     "/user/add"
+[GIN] 2024/12/31 - 12:21:27 | 200 |     12.7334ms |             ::1 | POST     "/user/page"
+2024-12-31T12:21:40.182+0800	INFO	controller/repairmanController.go:190	[{0 <nil>}]
+[GIN] 2024/12/31 - 12:21:40 | 200 |     29.1264ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:21:40 | 200 |     12.8742ms |             ::1 | POST     "/user/page"
+2024-12-31T12:21:48.553+0800	ERROR	controller/repairmanController.go:179	[Key: 'Repairman.UserName' Error:Field validation for 'UserName' failed on the 'required' tag]
+[GIN] 2024/12/31 - 12:21:48 | 400 |      1.4645ms |             ::1 | POST     "/user/update"
+2024-12-31T12:22:11.609+0800	INFO	controller/repairmanController.go:190	[{0 <nil>}]
+[GIN] 2024/12/31 - 12:22:11 | 200 |     24.4156ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:22:11 | 200 |     12.5532ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:23:03 | 200 |     12.9628ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:25:15 | 200 |     13.6324ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:26:22 | 200 |     12.5982ms |       127.0.0.1 | GET      "/user/info/7f725beedbea40a19d09b10084be92c5"
+2024-12-31T12:28:37.166+0800	INFO	controller/repairmanController.go:190	[{0 <nil>}]
+[GIN] 2024/12/31 - 12:28:37 | 200 |     27.8785ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:28:37 | 200 |     12.5931ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:29:12 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 12:29:12 | 200 |     13.7475ms |             ::1 | POST     "/user/page"
+2024-12-31T12:29:17.762+0800	INFO	controller/repairmanController.go:190	[{0 <nil>}]
+[GIN] 2024/12/31 - 12:29:17 | 200 |     25.3532ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:29:17 | 200 |     13.0138ms |             ::1 | POST     "/user/page"
+2024-12-31T12:31:12.643+0800	INFO	controller/repairmanController.go:183	[{ 6666 qwe qwe qwe 0 qweqwe 0  2024-12-31 04:19:58 +0800 CST}]
+2024-12-31T12:31:12.679+0800	INFO	controller/repairmanController.go:191	[{0 <nil>}]
+[GIN] 2024/12/31 - 12:31:12 | 200 |     36.4938ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:31:12 | 200 |     12.8586ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:31:50 | 200 |     12.4542ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:32:43 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 12:32:43 | 200 |     13.1039ms |             ::1 | POST     "/user/page"
+2024-12-31T12:32:50.217+0800	INFO	controller/repairmanController.go:183	[{429332d0503e498996e753c80d7e1bc2 啊啊啊啊啊啊 qwe qwe qwe 0 qweqwe 0  2024-12-31 04:19:58 +0800 CST}]
+2024-12-31T12:32:50.258+0800	INFO	controller/repairmanController.go:191	[{1 <nil>}]
+[GIN] 2024/12/31 - 12:32:50 | 200 |     42.5914ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:32:50 | 200 |     12.8932ms |             ::1 | POST     "/user/page"
+2024-12-31T12:33:05.904+0800	INFO	controller/repairmanController.go:183	[{2fe876cc3901475c8f43cb286c9c4c1b zhangsan 123456 张三 12312322111 0 1 0  2024-12-30 12:11:50 +0800 CST}]
+2024-12-31T12:33:05.936+0800	INFO	controller/repairmanController.go:191	[{1 <nil>}]
+[GIN] 2024/12/31 - 12:33:05 | 200 |      32.133ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:33:05 | 200 |     13.1529ms |             ::1 | POST     "/user/page"
+2024-12-31T12:34:43.315+0800	INFO	controller/repairmanController.go:183	[{f01845bd9cb34dc1b7d4c904818b4b34 213 123 123 123 3 213 0  2024-12-31 04:21:26 +0800 CST}]
+2024-12-31T12:34:43.347+0800	INFO	controller/repairmanController.go:191	[{1 <nil>}]
+[GIN] 2024/12/31 - 12:34:43 | 200 |     32.1243ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 12:34:43 | 200 |     12.8598ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:39:55 | 200 |     12.3547ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:40:02 | 200 |     12.7661ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:40:08 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 12:40:08 | 200 |     13.0597ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:40:34 | 200 |     13.4682ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:40:59 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 12:41:00 | 200 |     12.1314ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:41:03 | 200 |      9.3692ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:41:21 | 200 |      13.267ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:41:26 | 200 |      9.8098ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:41:43 | 200 |     14.6645ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 12:41:47 | 404 |            0s |             ::1 | GET      "/user/delete/93d6e98692f64d539dbfc1919737a541"
+[GIN] 2024/12/31 - 12:42:29 | 404 |            0s |             ::1 | GET      "/user/delete/93d6e98692f64d539dbfc1919737a541"
+[GIN] 2024/12/31 - 12:43:09 | 200 |     39.1053ms |             ::1 | GET      "/user/delete/93d6e98692f64d539dbfc1919737a541"
+[GIN] 2024/12/31 - 12:43:09 | 200 |    365.8352ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:13:13 | 200 |     13.7268ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:13:59 | 200 |     12.4259ms |       127.0.0.1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:16:56 | 200 |     12.6309ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:17:03 | 200 |     12.7056ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:17:06 | 200 |      31.014ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:17:09 | 200 |     12.2612ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:17:11 | 200 |     12.4436ms |             ::1 | POST     "/user/page"
+2024-12-31T14:17:18.735+0800	ERROR	controller/repairmanController.go:134	[record not found]
+[GIN] 2024/12/31 - 14:17:18 | 200 |     13.4313ms |             ::1 | GET      "/user/info/zhangsan"
+[GIN] 2024/12/31 - 14:18:49 | 200 |     13.2378ms |             ::1 | GET      "/user/info/2fe876cc3901475c8f43cb286c9c4c1b"
+[GIN] 2024/12/31 - 14:19:00 | 200 |     13.3926ms |       127.0.0.1 | GET      "/user/info/7f725beedbea40a19d09b10084be92c5"
+[GIN] 2024/12/31 - 14:19:08 | 200 |     12.2831ms |             ::1 | GET      "/user/info/7f725beedbea40a19d09b10084be92c5"
+[GIN] 2024/12/31 - 14:19:21 | 200 |     12.3742ms |             ::1 | GET      "/user/info/7f725beedbea40a19d09b10084be92c5"
+[GIN] 2024/12/31 - 14:20:29 | 200 |     12.7942ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:20:38 | 200 |     12.7357ms |             ::1 | GET      "/user/info/7f725beedbea40a19d09b10084be92c5"
+[GIN] 2024/12/31 - 14:21:06 | 200 |     12.2206ms |             ::1 | POST     "/user/page"
+2024-12-31T14:21:36.410+0800	INFO	controller/repairmanController.go:213	[{f01845bd9cb34dc1b7d4c904818b4b34 codeWang 123 王顺为 98893712211 1 213 0  2024-12-31 04:21:26 +0800 CST}]
+2024-12-31T14:21:36.446+0800	INFO	controller/repairmanController.go:221	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:21:36 | 200 |     36.5163ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 14:21:36 | 200 |     12.3992ms |             ::1 | POST     "/user/page"
+2024-12-31T14:22:25.064+0800	INFO	controller/repairmanController.go:213	[{429332d0503e498996e753c80d7e1bc2 huangF qwe 黄凡 18112128181 0 擅长充电桩的维修
+ 0  2024-12-31 04:19:58 +0800 CST}]
+2024-12-31T14:22:25.098+0800	INFO	controller/repairmanController.go:221	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:22:25 | 200 |     34.5141ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 14:22:25 | 200 |      12.286ms |             ::1 | POST     "/user/page"
+2024-12-31T14:22:49.218+0800	INFO	controller/repairmanController.go:213	[{2fe876cc3901475c8f43cb286c9c4c1b zhangsan 123456 张三 12312322111 0 对充电枪的维修较为擅长
+ 0  2024-12-30 12:11:50 +0800 CST}]
+2024-12-31T14:22:49.250+0800	INFO	controller/repairmanController.go:221	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:22:49 | 200 |     32.8999ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 14:22:49 | 200 |     12.8133ms |             ::1 | POST     "/user/page"
+2024-12-31T14:23:14.538+0800	INFO	controller/repairmanController.go:213	[{f01845bd9cb34dc1b7d4c904818b4b34 codeWang 123 王顺为 98893712211 1 倾向维修检测方向 0  2024-12-31 04:21:26 +0800 CST}]
+2024-12-31T14:23:14.569+0800	INFO	controller/repairmanController.go:221	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:23:14 | 200 |     32.0094ms |             ::1 | POST     "/user/update"
+[GIN] 2024/12/31 - 14:23:14 | 200 |      12.614ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:23:41 | 200 |     12.8254ms |       127.0.0.1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:29:04 | 200 |     12.4052ms |       127.0.0.1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:35:33 | 200 |     13.6986ms |       127.0.0.1 | GET      "/station/info/bb8876286d0047edac3d26e135ae2a51"
+[GIN] 2024/12/31 - 14:38:16 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 14:38:17 | 200 |     13.3074ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:38:19 | 200 |     12.8096ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:39:19 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 14:39:19 | 200 |     13.1087ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:40:01 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 14:40:01 | 200 |     12.7577ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:44:33 | 200 |     33.6858ms |             ::1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:44:36 | 200 |     34.5059ms |             ::1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:44:42 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 14:44:42 | 200 |     13.0094ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:44:50 | 200 |     37.5355ms |       127.0.0.1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:46:01 | 200 |      31.972ms |             ::1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:46:04 | 200 |     34.1598ms |             ::1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:46:07 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 14:46:07 | 200 |     13.4345ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:46:19 | 200 |     12.6421ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:46:29 | 200 |     31.6408ms |             ::1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:46:29 | 200 |     13.1841ms |             ::1 | POST     "/station/page"
+2024-12-31T14:46:38.743+0800	INFO	controller/stationController.go:69	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:46:38 | 200 |     34.3886ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 14:46:38 | 200 |     13.5666ms |             ::1 | POST     "/station/page"
+2024-12-31T14:46:45.843+0800	INFO	controller/stationController.go:69	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:46:45 | 200 |     33.7993ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 14:46:45 | 200 |     13.2179ms |             ::1 | POST     "/station/page"
+2024-12-31T14:46:51.054+0800	INFO	controller/stationController.go:69	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:46:51 | 200 |     36.8012ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 14:46:51 | 200 |     12.6363ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:47:43 | 200 |     12.8312ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:51:33 | 200 |     13.3339ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:51:34 | 200 |      13.679ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:51:37 | 200 |     13.0074ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:56:20 | 200 |     34.0685ms |             ::1 | GET      "/station/delete/bb8876286d0047edac3d26e135ae2a51"
+[GIN] 2024/12/31 - 14:56:20 | 200 |     12.9116ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:56:23 | 200 |     29.3751ms |             ::1 | GET      "/station/delete/dd3be296a7dd4b778a635d64af2688a6"
+[GIN] 2024/12/31 - 14:56:23 | 200 |     13.1832ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:56:27 | 200 |     12.4519ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 14:56:28 | 200 |     11.8427ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:56:45 | 200 |     11.8565ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:57:47 | 200 |     61.5465ms |             ::1 | POST     "/station/add"
+[GIN] 2024/12/31 - 14:57:47 | 200 |      12.283ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:58:02 | 200 |     29.9493ms |             ::1 | GET      "/station/delete/ef8000a5f3f24989b557967d6142c32b"
+[GIN] 2024/12/31 - 14:58:02 | 200 |      12.695ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:58:06 | 200 |     11.9773ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:58:10 | 200 |     24.1033ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:58:11 | 200 |     11.4894ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 14:58:24 | 200 |     13.2386ms |             ::1 | GET      "/station/info/1afe286fb9f64a36a52771a093633bfb"
+[GIN] 2024/12/31 - 14:58:32 | 200 |     11.8807ms |             ::1 | POST     "/station/page"
+2024-12-31T14:59:17.568+0800	INFO	controller/stationController.go:81	[{1 <nil>}]
+[GIN] 2024/12/31 - 14:59:17 | 200 |     31.2317ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 14:59:17 | 200 |      12.332ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 15:00:22 | 200 |     12.5323ms |             ::1 | POST     "/station/page"
+2024-12-31T15:02:11.700+0800	INFO	controller/stationController.go:81	[{1 <nil>}]
+[GIN] 2024/12/31 - 15:02:11 | 200 |     37.1143ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 15:02:11 | 200 |     11.9606ms |             ::1 | POST     "/station/page"
+2024-12-31T15:03:29.794+0800	INFO	controller/stationController.go:81	[{1 <nil>}]
+[GIN] 2024/12/31 - 15:03:29 | 200 |     31.2872ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 15:03:29 | 200 |     16.2883ms |             ::1 | POST     "/station/page"
+2024-12-31T15:04:35.422+0800	INFO	controller/stationController.go:81	[{1 <nil>}]
+[GIN] 2024/12/31 - 15:04:35 | 200 |     33.7031ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 15:04:35 | 200 |     12.1162ms |             ::1 | POST     "/station/page"
+2024-12-31T15:06:18.672+0800	INFO	controller/stationController.go:81	[{1 <nil>}]
+[GIN] 2024/12/31 - 15:06:18 | 200 |      37.097ms |             ::1 | POST     "/station/update"
+[GIN] 2024/12/31 - 15:06:18 | 200 |     12.9863ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 15:07:52 | 200 |     19.2993ms |       127.0.0.1 | POST     "/repair/page"
+[GIN] 2024/12/31 - 15:10:44 | 200 |     13.6339ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 15:11:00 | 200 |     11.9331ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 15:11:01 | 200 |     13.0019ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 15:16:51 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:16:56 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:16:56 | 200 |     12.2687ms |             ::1 | POST     "/station/page"
+[GIN] 2024/12/31 - 15:20:44 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:20:45 | 200 |       13.16ms |             ::1 | POST     "/user/page"
+[GIN] 2024/12/31 - 15:20:45 | 200 |     18.9386ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:30:30 | 200 |     12.3649ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:32:40 | 200 |     11.2475ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:32:44 | 200 |     11.5264ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:32:50 | 200 |     11.4155ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:34:08 | 200 |      11.121ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:34:59 | 200 |     11.8896ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:35:40 | 200 |     11.2588ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:36:55 | 200 |     11.4211ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 15:37:38 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:38:59 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:42:12 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:42:14 | 200 |     16.7751ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:43:18 | 200 |     16.8738ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:50:20 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:50:20 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:55:02 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:55:18 | 200 |      1.3209ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:57:05 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:57:06 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:57:11 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:57:11 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:58:26 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:58:27 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:59:22 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:59:22 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 15:59:49 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 15:59:49 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:00:02 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:00:03 | 200 |       131.3µs |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:00:18 | 200 |     12.1799ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 16:00:21 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:01:12 | 200 |     35.9173ms |             ::1 | POST     "/fee/add"
+[GIN] 2024/12/31 - 16:01:12 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:01:16 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:01:16 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:02:34 | 200 |      13.862ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:03:26 | 200 |     12.0602ms |             ::1 | POST     "/user/login"
+[GIN] 2024/12/31 - 16:03:29 | 200 |            0s |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:03:44 | 200 |     14.2772ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2024/12/31 - 16:06:29 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:06:29 | 200 |     13.0292ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:06:40 | 200 |     30.9585ms |             ::1 | POST     "/fee/add"
+[GIN] 2024/12/31 - 16:06:40 | 200 |     11.6474ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:07:42 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:07:43 | 200 |     11.1366ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:08:18 | 200 |     11.4983ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:10:02 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:10:02 | 200 |     11.1395ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:07 | 200 |     10.1596ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:13 | 200 |     27.4801ms |             ::1 | GET      "/fee/delete/84a95e1936da4839b88f9113ab9b8f84"
+[GIN] 2024/12/31 - 16:11:13 | 200 |      10.001ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:20 | 200 |     10.0187ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:24 | 200 |      10.406ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:24 | 200 |     10.1433ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:25 | 200 |     10.9786ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:26 | 200 |     10.2058ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:26 | 200 |     10.4006ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:26 | 200 |     10.0613ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:11:46.995+0800	INFO	controller/feeController.go:94	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:11:46 | 200 |     27.9204ms |             ::1 | POST     "/fee/update"
+[GIN] 2024/12/31 - 16:11:47 | 200 |      9.9794ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:11:56 | 200 |     29.0621ms |             ::1 | POST     "/fee/add"
+[GIN] 2024/12/31 - 16:11:56 | 200 |      9.9134ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:12:22.049+0800	INFO	controller/feeController.go:94	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:12:22 | 200 |     36.5227ms |             ::1 | POST     "/fee/update"
+[GIN] 2024/12/31 - 16:12:22 | 200 |     11.4426ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:12:25 | 200 |      9.9815ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:12:30 | 200 |     10.1905ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:12:31 | 200 |       9.898ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:13:15 | 200 |     10.1895ms |             ::1 | GET      "/fee/info/507cbda6520f455386b52d5e4f291857"
+[GIN] 2024/12/31 - 16:13:23 | 200 |     10.2789ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:19:01 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:19:02 | 200 |     10.1619ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:16 | 200 |     16.3586ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:34 | 200 |     10.7785ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:36 | 200 |     10.3575ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:37 | 200 |       9.907ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:37 | 200 |      9.9115ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:37 | 200 |      10.058ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:39 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:21:40 | 200 |     10.2949ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:46 | 200 |      11.123ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:47 | 200 |     10.9233ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:47 | 200 |      9.8116ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:47 | 200 |     10.5237ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:49 | 200 |      9.9777ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:49 | 200 |      10.164ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:49 | 200 |     10.1888ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:50 | 200 |     10.5171ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:50 | 200 |      9.8583ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:50 | 200 |      9.8481ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:21:50 | 200 |     10.2625ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:22:36 | 200 |     10.2233ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:23:20 | 200 |     14.7091ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:23:26 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:23:26 | 200 |     10.6784ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:23:42 | 200 |      9.8985ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:23:45 | 200 |      9.9257ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:23:46 | 200 |      9.8329ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:24:01 | 200 |     10.1492ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:24:05 | 200 |     10.2606ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:24:58 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T16:24:58.668+0800	INFO	controller/feeController.go:112	[{1 10 0 0 false}]
+[GIN] 2024/12/31 - 16:24:58 | 200 |     14.3364ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:25:01.329+0800	INFO	controller/feeController.go:112	[{1 10 0 2 true}]
+[GIN] 2024/12/31 - 16:25:01 | 200 |     26.1763ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:25:10.703+0800	INFO	controller/feeController.go:112	[{1 10 0 1 true}]
+[GIN] 2024/12/31 - 16:25:10 | 200 |     26.6854ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:25:13.431+0800	INFO	controller/feeController.go:112	[{1 10 0 0 true}]
+[GIN] 2024/12/31 - 16:25:13 | 200 |     13.3895ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:25:18.036+0800	INFO	controller/feeController.go:112	[{1 10 0 0 false}]
+[GIN] 2024/12/31 - 16:25:18 | 200 |     13.4636ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:25:48 | 200 |     38.4558ms |             ::1 | POST     "/fee/add"
+2024-12-31T16:25:48.910+0800	INFO	controller/feeController.go:112	[{1 10 0 0 false}]
+[GIN] 2024/12/31 - 16:25:48 | 200 |     13.3396ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:26:04.719+0800	INFO	controller/feeController.go:94	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:26:04 | 200 |     34.4811ms |             ::1 | POST     "/fee/update"
+2024-12-31T16:26:04.735+0800	INFO	controller/feeController.go:112	[{1 10 0 0 false}]
+[GIN] 2024/12/31 - 16:26:04 | 200 |     13.2685ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:26:09.589+0800	INFO	controller/feeController.go:94	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:26:09 | 200 |     33.2718ms |             ::1 | POST     "/fee/update"
+2024-12-31T16:26:09.602+0800	INFO	controller/feeController.go:112	[{1 10 0 0 false}]
+[GIN] 2024/12/31 - 16:26:09 | 200 |     13.1061ms |             ::1 | POST     "/fee/page"
+2024-12-31T16:27:14.337+0800	INFO	controller/feeController.go:112	[{1 10 0 0 false}]
+[GIN] 2024/12/31 - 16:27:14 | 200 |     13.3822ms |             ::1 | POST     "/fee/page"
+[GIN] 2024/12/31 - 16:31:16 | 200 |     13.1079ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:32:16 | 404 |            0s |             ::1 | GET      "/pile/delete/undefined"
+[GIN] 2024/12/31 - 16:34:37 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:34:38 | 200 |     25.8226ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:34:48 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:34:49 | 200 |     23.7252ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:37:28 | 200 |     13.1929ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:37:55 | 200 |     12.8125ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:38:57 | 200 |     12.4642ms |             ::1 | POST     "/pile/page"
+2024-12-31T16:39:13.958+0800	INFO	controller/pileController.go:86	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:39:13 | 200 |    297.1039ms |             ::1 | POST     "/pile/update"
+[GIN] 2024/12/31 - 16:39:14 | 200 |     60.0279ms |             ::1 | POST     "/pile/page"
+2024-12-31T16:39:22.603+0800	INFO	controller/pileController.go:86	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:39:22 | 200 |     32.2596ms |             ::1 | POST     "/pile/update"
+[GIN] 2024/12/31 - 16:39:22 | 200 |     13.3447ms |             ::1 | POST     "/pile/page"
+2024-12-31T16:39:28.236+0800	INFO	controller/pileController.go:86	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:39:28 | 200 |     32.9142ms |             ::1 | POST     "/pile/update"
+[GIN] 2024/12/31 - 16:39:28 | 200 |     13.5211ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:40:42 | 200 |     12.6565ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:41:12 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:41:13 | 200 |    257.9537ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:41:15 | 200 |     81.2156ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:41:18 | 200 |    396.8089ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:42:08 | 200 |    2.3307443s |             ::1 | POST     "/pile/add"
+[GIN] 2024/12/31 - 16:42:08 | 200 |     13.2544ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:42:13 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 16:42:13 | 200 |     12.4618ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:43:22 | 200 |     12.7997ms |             ::1 | POST     "/pile/page"
+2024-12-31T16:43:44.143+0800	INFO	controller/pileController.go:86	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:43:44 | 200 |     35.6449ms |             ::1 | POST     "/pile/update"
+[GIN] 2024/12/31 - 16:43:44 | 200 |     18.0739ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:44:26 | 200 |    2.3965105s |             ::1 | POST     "/pile/add"
+[GIN] 2024/12/31 - 16:44:27 | 200 |    494.7041ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:45:53 | 200 |    2.1141616s |             ::1 | POST     "/pile/add"
+[GIN] 2024/12/31 - 16:45:54 | 200 |     14.0637ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:46:21 | 200 |     13.3682ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:46:23 | 200 |     13.1913ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:46:26 | 200 |     69.3469ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:46:34 | 200 |     13.1839ms |             ::1 | GET      "/pile/info/47fc384383614f61bdcd0fb3f23b0aec"
+[GIN] 2024/12/31 - 16:47:59 | 200 |     13.1079ms |             ::1 | POST     "/pile/page"
+2024-12-31T16:48:06.810+0800	INFO	controller/pileController.go:93	[{1 <nil>}]
+[GIN] 2024/12/31 - 16:48:06 | 200 |     38.5179ms |             ::1 | POST     "/pile/update"
+[GIN] 2024/12/31 - 16:48:06 | 200 |     13.9223ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:51:19 | 404 |            0s |             ::1 | GET      "/pile/delete/undefined"
+[GIN] 2024/12/31 - 16:52:03 | 200 |     13.6178ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:52:09 | 404 |            0s |             ::1 | GET      "/pile/delete/6b4e874ed687479eb2634e4cdbdeae41"
+2024-12-31T16:54:21.111+0800	ERROR	controller/pileController.go:130	[failed to submit transaction:rpc error: code = Aborted desc = failed to endorse transaction, see attached details for more info]
+[GIN] 2024/12/31 - 16:54:21 | 500 |     95.1421ms |             ::1 | GET      "/pile/delete/6b4e874ed687479eb2634e4cdbdeae41"
+[GIN] 2024/12/31 - 16:54:44 | 200 |    2.1056491s |             ::1 | POST     "/pile/add"
+[GIN] 2024/12/31 - 16:54:45 | 200 |     23.9203ms |             ::1 | POST     "/pile/page"
+2024-12-31T16:54:47.834+0800	ERROR	controller/pileController.go:130	[failed to submit transaction:rpc error: code = Aborted desc = failed to endorse transaction, see attached details for more info]
+[GIN] 2024/12/31 - 16:54:47 | 500 |     70.5427ms |             ::1 | GET      "/pile/delete/3d673a9637fb463b95c0a7807aea79db"
+[GIN] 2024/12/31 - 16:55:36 | 200 |     22.1968ms |             ::1 | GET      "/pile/delete/3d673a9637fb463b95c0a7807aea79db"
+[GIN] 2024/12/31 - 16:55:36 | 200 |      11.624ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 16:55:58 | 200 |      11.205ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:06:28 | 200 |     11.8918ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:06:33 | 404 |            0s |             ::1 | GET      "/pile/history/47fc384383614f61bdcd0fb3f23b0aec"
+
+
+[31m2024/12/31 17:07:19 [Recovery] 2024/12/31 - 17:07:19 panic recovered:
+GET /pile/history/e80b79a7433a4858b207168c0421503e HTTP/1.1
+Host: localhost:8080
+Accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Authorization: *
+Connection: keep-alive
+Origin: http://localhost:5173
+Referer: http://localhost:5173/
+Sec-Ch-Ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+
+
+failed to read TLS certifcate file: open ./../cert/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt: The system cannot find the path specified.
+D:/Code/fabric/fabric-project/ev_charging_system/fabric/fabric.go:30 (0x1290efe)
+	newGrpcConnection: panic(fmt.Errorf("failed to read TLS certifcate file: %w", err))
+D:/Code/fabric/fabric-project/ev_charging_system/fabric/pile.go:118 (0x129295d)
+	QueryPileHistory: clientConnection := newGrpcConnection()
+D:/Code/fabric/fabric-project/ev_charging_system/controller/pileController.go:143 (0x12998b8)
+	pileController.GetPileHistory: info, err := fabric.QueryPileHistory(pileId)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x11210ea)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/fabric/fabric-project/ev_charging_system/middleware/middleware.go:38 (0x12aa839)
+	main.AuthMiddleware.func3: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112e0e4)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x112e0cb)
+	LoggerWithConfig.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112efae)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x112ef9b)
+	CustomRecoveryWithWriter.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112efae)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x112ef9b)
+	CustomRecoveryWithWriter.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112e0e4)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x112e0cb)
+	LoggerWithConfig.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112d511)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x112cf80)
+	(*Engine).handleHTTPRequest: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x112cab1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+D:/Dev Tool/Go/src/net/http/server.go:3210 (0xf991ad)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+D:/Dev Tool/Go/src/net/http/server.go:2092 (0xf8a50f)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+D:/Dev Tool/Go/src/runtime/asm_amd64.s:1700 (0x9e7420)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2024/12/31 17:07:23 [Recovery] 2024/12/31 - 17:07:23 panic recovered:
+GET /pile/history/47fc384383614f61bdcd0fb3f23b0aec HTTP/1.1
+Host: localhost:8080
+Accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Authorization: *
+Connection: keep-alive
+Origin: http://localhost:5173
+Referer: http://localhost:5173/
+Sec-Ch-Ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+
+
+failed to read TLS certifcate file: open ./../cert/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt: The system cannot find the path specified.
+D:/Code/fabric/fabric-project/ev_charging_system/fabric/fabric.go:30 (0x1290efe)
+	newGrpcConnection: panic(fmt.Errorf("failed to read TLS certifcate file: %w", err))
+D:/Code/fabric/fabric-project/ev_charging_system/fabric/pile.go:118 (0x129295d)
+	QueryPileHistory: clientConnection := newGrpcConnection()
+D:/Code/fabric/fabric-project/ev_charging_system/controller/pileController.go:143 (0x12998b8)
+	pileController.GetPileHistory: info, err := fabric.QueryPileHistory(pileId)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x11210ea)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/fabric/fabric-project/ev_charging_system/middleware/middleware.go:38 (0x12aa839)
+	main.AuthMiddleware.func3: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112e0e4)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x112e0cb)
+	LoggerWithConfig.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112efae)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x112ef9b)
+	CustomRecoveryWithWriter.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112efae)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x112ef9b)
+	CustomRecoveryWithWriter.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112e0e4)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x112e0cb)
+	LoggerWithConfig.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112d511)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x112cf80)
+	(*Engine).handleHTTPRequest: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x112cab1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+D:/Dev Tool/Go/src/net/http/server.go:3210 (0xf991ad)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+D:/Dev Tool/Go/src/net/http/server.go:2092 (0xf8a50f)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+D:/Dev Tool/Go/src/runtime/asm_amd64.s:1700 (0x9e7420)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2024/12/31 17:07:55 [Recovery] 2024/12/31 - 17:07:55 panic recovered:
+POST /pile/add HTTP/1.1
+Host: localhost:8080
+Accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Authorization: *
+Connection: keep-alive
+Content-Length: 128
+Content-Type: application/json
+Origin: http://localhost:5173
+Referer: http://localhost:5173/
+Sec-Ch-Ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+
+
+failed to read TLS certifcate file: open ./../cert/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt: The system cannot find the path specified.
+D:/Code/fabric/fabric-project/ev_charging_system/fabric/fabric.go:30 (0x1290efe)
+	newGrpcConnection: panic(fmt.Errorf("failed to read TLS certifcate file: %w", err))
+D:/Code/fabric/fabric-project/ev_charging_system/fabric/pile.go:19 (0x1291255)
+	RegisterPile: clientConnection := newGrpcConnection()
+D:/Code/fabric/fabric-project/ev_charging_system/controller/pileController.go:53 (0x129784a)
+	pileController.AddPile: err = fabric.RegisterPile(req.PileID, pileHash)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x11210ea)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/fabric/fabric-project/ev_charging_system/middleware/middleware.go:38 (0x12aa839)
+	main.AuthMiddleware.func3: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112e0e4)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x112e0cb)
+	LoggerWithConfig.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112efae)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x112ef9b)
+	CustomRecoveryWithWriter.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112efae)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 (0x112ef9b)
+	CustomRecoveryWithWriter.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112e0e4)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 (0x112e0cb)
+	LoggerWithConfig.func1: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 (0x112d511)
+	(*Context).Next: c.handlers[c.index](c)
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633 (0x112cf80)
+	(*Engine).handleHTTPRequest: c.Next()
+D:/Code/GoProjec/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 (0x112cab1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+D:/Dev Tool/Go/src/net/http/server.go:3210 (0xf991ad)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+D:/Dev Tool/Go/src/net/http/server.go:2092 (0xf8a50f)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+D:/Dev Tool/Go/src/runtime/asm_amd64.s:1700 (0x9e7420)
+	goexit: BYTE	$0x90	// NOP
+[0m
+[GIN] 2024/12/31 - 17:08:44 | 200 |    2.1066972s |             ::1 | POST     "/pile/add"
+[GIN] 2024/12/31 - 17:08:44 | 200 |     10.7064ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:08:50 | 200 |     39.3491ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:08:52 | 200 |     39.4625ms |             ::1 | GET      "/pile/history/f0eb191dd6c24e2eac3c44df3a4d8d24"
+[GIN] 2024/12/31 - 17:09:20 | 200 |     10.2656ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:09:22 | 200 |     36.1043ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:09:59 | 200 |     10.1891ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:10:01 | 200 |     32.7439ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:10:10 | 200 |      39.559ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:13:17 | 200 |     34.1427ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:25:11 | 200 |    1.1068338s |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:25:25 | 404 |            0s |             ::1 | GET      "/gun/historyByPile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:25:25 | 200 |     37.0119ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:25:47 | 200 |     35.6991ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:25:47 | 200 |     54.6447ms |             ::1 | GET      "/gun/historyByPile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:35:28 | 200 |     11.8553ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:35:34 | 500 |            0s |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:36:20 | 500 |            0s |             ::1 | GET      "/gun/list/pile/7352733db8f346e2b72ec7a662538aea"
+2024-12-31T17:36:30.804+0800	ERROR	controller/gunController.go:46	[failed to submit transaction:rpc error: code = Aborted desc = failed to endorse transaction, see attached details for more info]
+[GIN] 2024/12/31 - 17:36:30 | 500 |     64.1416ms |             ::1 | POST     "/gun/add"
+[GIN] 2024/12/31 - 17:36:56 | 500 |            0s |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:37:05 | 500 |            0s |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:39:15 | 200 |     14.2211ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:40:28 | 200 |     13.4302ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:40:41 | 200 |     13.2081ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:40:45 | 200 |     13.1677ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:40:52 | 200 |     2.103096s |             ::1 | POST     "/gun/add"
+[GIN] 2024/12/31 - 17:40:52 | 200 |     12.9789ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:41:05 | 200 |     44.1454ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:41:05 | 200 |    162.4919ms |             ::1 | GET      "/gun/historyByPile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:41:10 | 200 |     13.1014ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:41:26 | 200 |     13.1837ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:42:59 | 200 |     13.6306ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:42:59 | 200 |     13.4552ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:42:59 | 200 |     13.3936ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:42:59 | 200 |     13.1422ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:43:08 | 200 |     12.8788ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:43:33 | 200 |     20.6465ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:44:28 | 200 |     12.6962ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:45:46 | 200 |     13.3577ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:45:49 | 200 |     13.1664ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:03 | 200 |     24.7587ms |             ::1 | POST     "/gun/update"
+[GIN] 2024/12/31 - 17:46:05 | 200 |    2.1157043s |             ::1 | POST     "/gun/update"
+[GIN] 2024/12/31 - 17:46:05 | 200 |     13.1203ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:09 | 200 |     13.6999ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:13 | 200 |     33.2814ms |             ::1 | GET      "/gun/historyByPile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:13 | 200 |     33.8449ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:22 | 200 |     13.2568ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:42 | 200 |    2.3324129s |             ::1 | POST     "/gun/add"
+[GIN] 2024/12/31 - 17:46:42 | 200 |     12.9085ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:54 | 200 |     35.3503ms |             ::1 | GET      "/gun/historyByPile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:46:54 | 200 |     37.2661ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:47:12 | 200 |     13.0492ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:47:28 | 200 |     2.114833s |             ::1 | POST     "/gun/update"
+[GIN] 2024/12/31 - 17:47:28 | 200 |     12.7704ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:47:36 | 200 |     13.7606ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:47:39 | 200 |     55.9586ms |             ::1 | GET      "/gun/historyByPile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:47:39 | 200 |     56.4458ms |             ::1 | GET      "/pile/history/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:49:31 | 200 |     13.4226ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:49:54 | 200 |    2.1066846s |             ::1 | POST     "/gun/add"
+[GIN] 2024/12/31 - 17:49:54 | 200 |     13.0379ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:49:58 | 200 |     13.0624ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:50:07 | 200 |      13.311ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:51:24 | 200 |     13.3251ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:56:51 | 200 |     13.3987ms |             ::1 | POST     "/pile/page"
+[GIN] 2024/12/31 - 17:56:59 | 200 |     13.6886ms |             ::1 | GET      "/gun/list/pile/406693dfa73948d0a22ab22ded711be0"
+[GIN] 2024/12/31 - 17:57:00 | 500 |     54.5071ms |             ::1 | GET      "/gun/history/452770781d454cba8d3beffdabbce69e"
+2024-12-31T17:58:23.426+0800	INFO	controller/gunController.go:82	[406693dfa73948d0a22ab22ded711be0 452770781d454cba8d3beffdabbce69e]
+[GIN] 2024/12/31 - 17:58:23 | 200 |     54.0272ms |             ::1 | GET      "/gun/history/452770781d454cba8d3beffdabbce69e"
+[GIN] 2024/12/31 - 18:20:30 | 200 |            0s |             ::1 | POST     "/repair/page"
+2024-12-31T18:21:01.969+0800	ERROR	controller/repairRequestController.go:40	[Error 1265 (01000): Data truncated for column 'request_time' at row 1]
+[GIN] 2024/12/31 - 18:21:01 | 500 |     22.4072ms |             ::1 | POST     "/repair/add"
+2024-12-31T18:21:49.077+0800	ERROR	controller/repairRequestController.go:40	[Error 1265 (01000): Data truncated for column 'request_time' at row 1]
+[GIN] 2024/12/31 - 18:21:49 | 500 |     20.8985ms |             ::1 | POST     "/repair/add"
+[GIN] 2024/12/31 - 18:22:39 | 200 |     34.2697ms |             ::1 | POST     "/repair/add"
+[GIN] 2024/12/31 - 18:22:39 | 200 |            0s |             ::1 | POST     "/repair/page"
+[GIN] 2024/12/31 - 18:22:42 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 18:22:43 | 200 |            0s |             ::1 | POST     "/repair/page"
+[GIN] 2024/12/31 - 18:23:21 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+[GIN] 2024/12/31 - 18:23:22 | 200 |            0s |             ::1 | POST     "/repair/page"
+[GIN] 2024/12/31 - 18:23:41 | 200 |            0s |             ::1 | POST     "/repair/page"
+[GIN] 2024/12/31 - 18:24:26 | 404 |            0s |             ::1 | GET      "/api/v1/members/info"
+2024-12-31T18:24:26.843+0800	ERROR	controller/repairRequestController.go:122	[Key: 'UserPageDto.UserType' Error:Field validation for 'UserType' failed on the 'lte' tag]
+[GIN] 2024/12/31 - 18:24:26 | 400 |       585.6µs |             ::1 | POST     "/repair/page"

@@ -41,8 +41,11 @@ func (r repairmanController) Login(g *gin.Context) {
 		response.RespondServerError(g)
 		return
 	}
-
-	response.RespondWithData(g, token)
+	result := struct {
+		Token string `json:"token"`
+		Type  int    `json:"type"`
+	}{token, int(userInfo.UserType)}
+	response.RespondWithData(g, result)
 }
 
 func (r repairmanController) Info(g *gin.Context) {
@@ -81,8 +84,15 @@ func (r repairmanController) ListAndPage(g *gin.Context) {
 	}
 	page := (req.PageNum - 1) * req.PageSize
 
+	var pages []*model.Repairman
+	var count int64
+	var err error
 	if req.UserType == 3 {
-		pages, count, err := dao.DaoService.RepairmanDAO.FindByPage(page, req.PageSize)
+		if req.IsUseState {
+			pages, count, err = dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.Status.Eq(req.State)).FindByPage(page, req.PageSize)
+		} else {
+			pages, count, err = dao.DaoService.RepairmanDAO.FindByPage(page, req.PageSize)
+		}
 		if err != nil {
 			log.Error(err)
 			response.RespondDefaultErr(g)
@@ -96,8 +106,11 @@ func (r repairmanController) ListAndPage(g *gin.Context) {
 		response.RespondWithData(g, pageResult)
 		return
 	}
-
-	pages, count, err := dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.UserType.Eq(req.UserType)).FindByPage(page, req.PageSize)
+	if req.IsUseState {
+		pages, count, err = dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.UserType.Eq(req.UserType), dao.DaoService.Query.Repairman.Status.Eq(req.State)).FindByPage(page, req.PageSize)
+	} else {
+		pages, count, err = dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.UserType.Eq(req.UserType)).FindByPage(page, req.PageSize)
+	}
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)
@@ -126,6 +139,26 @@ func (r repairmanController) GetUserById(g *gin.Context) {
 		return
 	}
 	response.RespondWithData(g, userData)
+}
+
+func (r repairmanController) DeleteUser(g *gin.Context) {
+	userId := g.Param("userId")
+	print("userid:", userId)
+	if len(userId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+
+	info, err := dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.RepairmanID.Eq(userId)).Delete()
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	} else if info.RowsAffected == 0 {
+		response.RespondErr(g, "affected 0 rows")
+		return
+	}
+	response.RespondOK(g)
 }
 
 func (r repairmanController) AddUser(g *gin.Context) {
@@ -180,6 +213,7 @@ func (r repairmanController) UpdateUser(g *gin.Context) {
 		response.RespondInvalidArgsErr(g)
 		return
 	}
+	log.Info(req)
 
 	update, err := dao.DaoService.RepairmanDAO.Where(dao.DaoService.Query.Repairman.RepairmanID.Eq(req.RepairmanID)).Updates(&req)
 	if err != nil {

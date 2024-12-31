@@ -20,13 +20,20 @@ type pileController struct {
 
 // 新增充电站
 func (s pileController) AddPile(g *gin.Context) {
+	user, exists := g.Get("user")
+	if !exists {
+		response.RespondWithErrCode(g, 401, "not login")
+		return
+	}
+	userInfo := user.(tool.User)
+
 	req := model.Pile{}
 	if err := g.Bind(&req); err != nil {
 		log.Error(err)
 		response.RespondInvalidArgsErr(g)
 		return
 	}
-
+	req.StationID = userInfo.RepairmanId
 	req.PileID = tool.GenerateUUIDWithoutDashes()
 	err := dao.DaoService.PileDao.Create(&req)
 	if err != nil {
@@ -84,11 +91,74 @@ func (s pileController) UpdatePile(g *gin.Context) {
 		return
 	}
 	log.Info(update)
+
+	pileData, err := dao.DaoService.PileDao.Where(dao.DaoService.Query.Pile.PileID.Eq(req.PileID)).Take()
+	if err != nil {
+		log.Error(err)
+		response.RespondErr(g, "Pile not exist")
+		return
+	}
+	pileJson, err := json.Marshal(req)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+	pileHash := tool.CalculateSHA256Hash(tool.EncodeToString(pileJson))
+	err = fabric.UpdatePile(pileData.PileID, pileHash)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
 	response.RespondOK(g)
+}
+func (s pileController) DeletePile(g *gin.Context) {
+	pileId := g.Param("pileId")
+	if len(pileId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+	_, err := dao.DaoService.PileDao.Where(dao.DaoService.Query.Pile.PileID.Eq(pileId)).Delete()
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
+	//err = fabric.DeletePile(pileId)
+	//if err != nil {
+	//	log.Error(err)
+	//	response.RespondDefaultErr(g)
+	//	return
+	//}
+	response.RespondOK(g)
+}
+
+func (s pileController) GetPileHistory(g *gin.Context) {
+	pileId := g.Param("pileId")
+	if len(pileId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+	info, err := fabric.QueryGunByPile(pileId)
+	if err != nil {
+		log.Error(err)
+		response.RespondInvalidArgsErr(g)
+		return
+	}
+	response.RespondWithData(g, info)
+
 }
 
 // 查询充电站分页信息
 func (s pileController) PileByPage(g *gin.Context) {
+	user, exists := g.Get("user")
+	if !exists {
+		response.RespondWithErrCode(g, 401, "not login")
+		return
+	}
+	userInfo := user.(tool.User)
+
 	req := dto.UserPageDto{}
 	if err := g.Bind(&req); err != nil {
 		log.Error(err)
@@ -99,7 +169,7 @@ func (s pileController) PileByPage(g *gin.Context) {
 	page := (req.PageNum - 1) * req.PageSize
 
 	if req.UserType == 3 {
-		pages, count, err := dao.DaoService.PileDao.FindByPage(page, req.PageSize)
+		pages, count, err := dao.DaoService.PileDao.Where(dao.DaoService.Query.Pile.StationID.Eq(userInfo.RepairmanId)).FindByPage(page, req.PageSize)
 		if err != nil {
 			log.Error(err)
 			response.RespondDefaultErr(g)
@@ -113,7 +183,7 @@ func (s pileController) PileByPage(g *gin.Context) {
 		return
 	}
 
-	pages, count, err := dao.DaoService.PileDao.Where(dao.DaoService.Query.Pile.Status.Eq(req.UserType)).FindByPage(page, req.PageSize)
+	pages, count, err := dao.DaoService.PileDao.Where(dao.DaoService.Query.Pile.Status.Eq(req.UserType), dao.DaoService.Query.Pile.StationID.Eq(userInfo.RepairmanId)).FindByPage(page, req.PageSize)
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)

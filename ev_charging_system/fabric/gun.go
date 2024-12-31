@@ -180,7 +180,7 @@ func QueryGunHistory(pileId, gunId string) ([]Gun, error) {
 	network := gw.GetNetwork(channel)
 	contract := network.GetContract(pileChaincode)
 
-	result, err := contract.EvaluateTransaction("QueryGunHistory", pileId)
+	result, err := contract.EvaluateTransaction("QueryGunHistory", pileId, gunId)
 	if err != nil {
 		return nil, fmt.Errorf("failed to submit transaction:%s", err.Error())
 	}

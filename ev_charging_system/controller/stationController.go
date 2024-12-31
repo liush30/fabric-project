@@ -24,15 +24,27 @@ func (s stationController) AddStation(g *gin.Context) {
 		response.RespondInvalidArgsErr(g)
 		return
 	}
-
-	req.StationID = tool.GenerateUUIDWithoutDashes()
-	err := dao.DaoService.StationDao.Create(&req)
+	id := tool.GenerateUUIDWithoutDashes()
+	man := model.Repairman{
+		RepairmanID: id,
+		UserName:    req.StationName,
+		Password:    req.LoginPwd,
+		UserType:    1,
+	}
+	err := dao.DaoService.RepairmanDAO.Create(&man)
 	if err != nil {
 		log.Error(err)
 		response.RespondDefaultErr(g)
 		return
 	}
-
+	req.StationID = tool.GenerateUUIDWithoutDashes()
+	req.RepairmanID = id
+	err = dao.DaoService.StationDao.Create(&req)
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	}
 	response.RespondOK(g)
 }
 
@@ -122,7 +134,7 @@ func (s stationController) GetMeStationInfo(g *gin.Context) {
 	staioninfo, err := dao.DaoService.StationDao.Where(dao.DaoService.Query.Station.RepairmanID.Eq(userInfo.RepairmanId)).Take()
 	if err != nil {
 		log.Error(err)
-		response.RespondDefaultErr(g);
+		response.RespondDefaultErr(g)
 		return
 	}
 
@@ -130,7 +142,25 @@ func (s stationController) GetMeStationInfo(g *gin.Context) {
 }
 
 // 新增充电站
-//func (s stationController) AddStation(g *gin.Context) {
+// func (s stationController) AddStation(g *gin.Context) {
 //
-//	response.RespondOK(g)
-//}
+//		response.RespondOK(g)
+//	}
+func (s stationController) DeleteStation(g *gin.Context) {
+	stationId := g.Param("stationId")
+	if len(stationId) == 0 {
+		response.RespondDefaultErr(g)
+		return
+	}
+
+	info, err := dao.DaoService.StationDao.Where(dao.DaoService.Query.Station.StationID.Eq(stationId)).Delete()
+	if err != nil {
+		log.Error(err)
+		response.RespondDefaultErr(g)
+		return
+	} else if info.RowsAffected == 0 {
+		response.RespondErr(g, "affected 0 rows")
+		return
+	}
+	response.RespondOK(g)
+}
